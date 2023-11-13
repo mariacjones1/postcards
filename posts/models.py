@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     """
-    Profile model, relates to Profile
+    Profile model, relates to User
     Sets default post image
     """
     CONTINENT_CHOICES = (
