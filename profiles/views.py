@@ -1,6 +1,5 @@
 from django.db.models import Count, Q
 from rest_framework import generics, filters
-# from django.utils import timezone
 from datetime import datetime, timedelta
 from .models import Profile
 from .serializers import ProfileSerializer
