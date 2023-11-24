@@ -16,6 +16,15 @@ class Post(models.Model):
         ("OC", "Oceania"),
         ("AN", "Antarctica")
     )
+    HOLIDAY_TYPE_CHOICES = (
+        ("solo", "Solo"),
+        ("couples", "Couples"),
+        ("group", "Group"),
+        ("girls", "Girls"),
+        ("guys", "Guys"),
+        ("work", "Work"),
+        ("family", "Family")
+    )
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -28,6 +37,12 @@ class Post(models.Model):
         max_length=2,
         choices=CONTINENT_CHOICES,
         default="EU"
+    )
+    holiday_type = models.CharField(
+        max_length=10,
+        choices=HOLIDAY_TYPE_CHOICES,
+        default="solo",
+        blank=True
     )
 
     class Meta:
