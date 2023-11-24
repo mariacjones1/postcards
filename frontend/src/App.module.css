@@ -12,6 +12,19 @@
     box-sizing: border-box;
 }
 
+.Content {
+    background-color: #DCF4F5;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid white;
+}
+
+.FillerImage {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
 a {
     transition: color ease-in-out 0.3s;
     color: #2e6980;
@@ -38,4 +51,26 @@ i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
     color: #252550;
+}
+
+figure {
+    text-align: center;
+    display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
