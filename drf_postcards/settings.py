@@ -52,6 +52,8 @@ REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_postcards.serializers.CurrentUserSerializer'
 }
 
+CSRF_COOKIE_NAME = 'csrftoken'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
