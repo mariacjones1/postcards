@@ -6,10 +6,13 @@ import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
     const handleSignOut = async () => {
         try {
@@ -48,7 +51,7 @@ const NavBar = () => {
             className={styles.NavLink}
             activeClassName={styles.Active}
             title={
-                <span>
+                <span id="dropdown">
                     <i class="fa-solid fa-earth-americas"></i>
                     Continents
                 </span>
@@ -56,13 +59,13 @@ const NavBar = () => {
             id={styles.Dropdown}
         >
             <div>
-                <NavDropdown.Item><NavLink to="/posts/africa">Africa</NavLink></NavDropdown.Item>
-                <NavDropdown.Item><NavLink to="/posts/antartica">Antartica</NavLink></NavDropdown.Item>
-                <NavDropdown.Item><NavLink to="/posts/posts/asia">Asia</NavLink></NavDropdown.Item>
-                <NavDropdown.Item><NavLink to="/posts/europe">Europe</NavLink></NavDropdown.Item>
-                <NavDropdown.Item><NavLink to="/posts/northamerica">North America</NavLink></NavDropdown.Item>
-                <NavDropdown.Item><NavLink to="/posts/oceania">Oceania</NavLink></NavDropdown.Item>
-                <NavDropdown.Item><NavLink to="/posts/southamerica">South America</NavLink></NavDropdown.Item>
+                <NavLink className={styles.DropdownItem} to="/posts/africa">Africa</NavLink>
+                <NavLink className={styles.DropdownItem} to="/posts/antartica">Antartica</NavLink>
+                <NavLink className={styles.DropdownItem} to="/posts/posts/asia">Asia</NavLink>
+                <NavLink className={styles.DropdownItem} to="/posts/europe">Europe</NavLink>
+                <NavLink className={styles.DropdownItem} to="/posts/northamerica">North America</NavLink>
+                <NavLink className={styles.DropdownItem} to="/posts/oceania">Oceania</NavLink>
+                <NavLink className={styles.DropdownItem} to="/posts/southamerica">South America</NavLink>
             </div>
         </NavDropdown>
         <NavLink
@@ -99,7 +102,7 @@ const NavBar = () => {
     );
 
     return (
-        <Navbar className={styles.NavBar} expand="md" fixed="top">
+        <Navbar expanded={expanded} className={styles.NavBar} expand="lg" fixed="top">
             <Container>
                 <NavLink to="/">
                     <Navbar.Brand>
@@ -107,7 +110,10 @@ const NavBar = () => {
                     </Navbar.Brand>
                 </NavLink>
                 {currentUser && newPostcardIcon}
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle
+                    ref={ref}
+                    onClick={() => setExpanded(!expanded)}
+                    aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-right">
                         <NavLink
