@@ -32,7 +32,7 @@
 
 .Blue,
 .BlueOutline:hover,
-.Bright:hover {
+.Teal:hover {
     background-color: #252550;
     color: #ffffff;
 }
@@ -61,7 +61,7 @@
     color: #000024;
 }
 
-.Bright {
+.Teal {
     background-color: #0c7c96;
     color: #ffffff;
 }
