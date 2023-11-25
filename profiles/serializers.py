@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from .models import Profile
 from followers.models import Follower
+from django_countries.serializers import CountryFieldMixin
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
@@ -31,5 +32,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'owner', 'created_at', 'updated_at', 'name',
             'content', 'image', 'is_owner', 'following_id',
             'posts_count', 'followers_count', 'following_count',
-            'recent_followers_count'
+            'recent_followers_count', 'location', 'favourite_country',
+            'travel_experience'
         ]
