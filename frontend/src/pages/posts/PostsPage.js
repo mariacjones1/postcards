@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import PopularProfiles from '../profiles/PopularProfiles';
+import TrendingProfiles from '../profiles/TrendingProfiles';
 
 const PostsPage = () => {
     return (
@@ -10,6 +11,7 @@ const PostsPage = () => {
             </Col>
             <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
                 <PopularProfiles />
+                <TrendingProfiles />
             </Col>
         </Row>
     );
