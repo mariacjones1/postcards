@@ -44,19 +44,14 @@
     color: #252550;
 }
 
-.Black,
-.BlackOutline:hover {
-    /* background-color: #242a3d;
-  color: white; */
+.Navy,
+.NavyOutline:hover {
     background-color: #000024;
     color: aliceblue;
 }
 
-.Black:hover,
-.BlackOutline {
-    /* background-color: #dadadf;
-  color: #242a3d;
-  border-color: #242a3d; */
+.Navy:hover,
+.NavyOutline {
     background-color: aliceblue;
     color: #000024;
 }

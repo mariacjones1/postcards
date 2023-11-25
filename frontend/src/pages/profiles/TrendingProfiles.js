@@ -4,6 +4,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Profile from './Profile';
 
 const TrendingProfiles = () => {
     const [profileData, setProfileData] = useState({
@@ -36,8 +37,8 @@ const TrendingProfiles = () => {
             {trendingProfiles.results.length ? (
                 <>
                     <p>Trending profiles</p>
-                    {trendingProfiles.results.map((profile) => (
-                        <p key={profile.id}>{profile.owner}</p>
+                    {trendingProfiles.results.slice(0, 5).map((profile) => (
+                        <Profile key={profile.id} profile={profile} />
                     ))}
                 </>
             ) : (
