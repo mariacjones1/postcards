@@ -15,6 +15,7 @@ import {
     useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
+import styles from "../../styles/ProfileEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -211,15 +212,6 @@ const ProfileEditForm = () => {
                     {message}
                 </Alert>
             ))}
-            <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                onClick={() => history.goBack()}
-            >
-                Cancel
-            </Button>
-            <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-                Save
-            </Button>
         </>
     );
 
@@ -227,7 +219,7 @@ const ProfileEditForm = () => {
         <Form onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
-                    <Container className={appStyles.Content}>
+                    <Container className={`${styles.EditContainer} ${appStyles.Content}`}>
                         <Form.Group>
                             {image && (
                                 <figure>
@@ -259,7 +251,18 @@ const ProfileEditForm = () => {
                     </Container>
                 </Col>
                 <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
-                    <Container className={appStyles.Content}>{textFields}</Container>
+                    <Container className={`${styles.EditContainer} ${appStyles.Content}`}>{textFields}</Container>
+                </Col>
+                <Col className="p-0 p-md-2 text-center">
+                    <Button
+                        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                        onClick={() => history.goBack()}
+                    >
+                        Cancel
+                    </Button>
+                    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+                        Save changes
+                    </Button>
                 </Col>
             </Row>
         </Form>
