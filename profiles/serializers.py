@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Profile
 from followers.models import Follower
 from django_countries.serializers import CountryFieldMixin
+from django_countries.serializer_fields import CountryField
 
 
 class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
@@ -12,6 +13,10 @@ class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
     followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
     recent_followers_count = serializers.ReadOnlyField()
+    location = CountryField(name_only=True)
+    favourite_country = CountryField(name_only=True)
+    travel_experience = serializers.ReadOnlyField(
+        source='get_travel_experience_display')
 
     def get_is_owner(self, obj):
         request = self.context['request']
