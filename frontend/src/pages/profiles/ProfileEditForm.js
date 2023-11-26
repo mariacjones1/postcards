@@ -40,7 +40,8 @@ const ProfileEditForm = () => {
         image,
         location,
         favourite_country,
-        travel_experience } = profileData;
+        travel_experience
+    } = profileData;
 
     const [countries, setCountries] = useState([]);
     const [travelExperienceChoices, setTravelExperienceChoices] = useState([]);

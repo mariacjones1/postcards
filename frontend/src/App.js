@@ -12,6 +12,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactForm from './pages/contact/ContactForm';
 import Footer from './components/Footer';
+import PostCreateForm from './pages/posts/PostCreateForm';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                     <Route exact path="/" render={() => <PostsPage />} />
                     <Route exact path="/signin" render={() => <SignInForm />} />
                     <Route exact path="/signup" render={() => <SignUpForm />} />
+                    <Route exact path="/posts/create" render={() => <PostCreateForm />} />
                     <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
                     <Route
                         exact

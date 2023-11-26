@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <>
-            <Nav justify fixed="bottom">
+            <Nav justify className="fixed-bottom">
                 <Nav.Item>
                     <Nav.Link
                         href="https://github.com/mariacjones1"
