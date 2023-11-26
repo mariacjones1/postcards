@@ -19,6 +19,7 @@ import { useRedirect } from '../../hooks/useRedirect';
 
 function PostCreateForm() {
     useRedirect("loggedOut");
+
     const [postData, setPostData] = useState({
         title: "",
         content: "",
