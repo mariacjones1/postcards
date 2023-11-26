@@ -1,7 +1,11 @@
 from django.db.models import Count, Q
 from rest_framework import generics, filters
+from rest_framework.views import View, APIView
+from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from datetime import datetime, timedelta
+from django.http import JsonResponse
+from django_countries import countries
 from .models import Profile
 from .serializers import ProfileSerializer
 from drf_postcards.permissions import IsOwnerOrReadOnly
@@ -46,3 +50,16 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
             distinct=True,
             filter=Q(created_at__gte=datetime.now()-timedelta(days=7)))
     ).order_by('-created_at')
+
+
+class GetCountriesView(APIView):
+    def get(self, request, *args, **kwargs):
+        country_list = [country.name for country in countries]
+        return JsonResponse(country_list, safe=False)
+
+
+class GetTravelExperienceChoicesView(View):
+    def get(self, request, *args, **kwargs):
+        choices = [{'value': value, 'display': display}
+                   for value, display in Profile.TRAVEL_EXPERIENCE_CHOICES]
+        return JsonResponse(choices, safe=False)

@@ -109,7 +109,7 @@ function ProfilePage() {
                         }
                         <Col xs={3} className="my-2">
                             <div><strong>Travel experience</strong></div>
-                            <div>{profile?.travel_experience}</div>
+                            <div>{profile?.travel_experience_display}</div>
                         </Col>
                     </Row>
                     <hr />

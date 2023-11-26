@@ -15,7 +15,9 @@ class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
     recent_followers_count = serializers.ReadOnlyField()
     location = CountryField(name_only=True)
     favourite_country = CountryField(name_only=True)
-    travel_experience = serializers.ReadOnlyField(
+    travel_experience = serializers.ChoiceField(
+        choices=Profile.TRAVEL_EXPERIENCE_CHOICES)
+    travel_experience_display = serializers.ReadOnlyField(
         source='get_travel_experience_display')
 
     def get_is_owner(self, obj):
@@ -38,5 +40,5 @@ class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
             'content', 'image', 'is_owner', 'following_id',
             'posts_count', 'followers_count', 'following_count',
             'recent_followers_count', 'location', 'favourite_country',
-            'travel_experience'
+            'travel_experience', 'travel_experience_display'
         ]
