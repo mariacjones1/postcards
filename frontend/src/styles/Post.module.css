@@ -11,6 +11,13 @@ h5 {
     margin: 0 0;
 }
 
+.Text {
+    background-color: white;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    vertical-align: middle;
+}
+
 .Heart {
     color: #eb0768;
 }
@@ -21,4 +28,9 @@ h5 {
 
 .HeartOutline:hover {
     color: #eb0768;
+}
+
+.NoWrap {
+    white-space: nowrap;
+    max-width: none;
 }

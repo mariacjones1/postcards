@@ -9,6 +9,7 @@ import PopularProfiles from '../profiles/PopularProfiles';
 import TrendingProfiles from '../profiles/TrendingProfiles';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosReq } from '../../api/axiosDefaults';
+import Post from './Post';
 
 function PostPage() {
     const { id } = useParams();
@@ -21,7 +22,6 @@ function PostPage() {
                     axiosReq.get(`/posts/${id}`)
                 ]);
                 setPost({ results: [post] });
-                console.log(post);
             } catch (err) {
                 console.log(err);
             }
@@ -35,7 +35,7 @@ function PostPage() {
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <PopularProfiles mobile />
-                <p>Post component</p>
+                <Post {...post.results[0]} setPosts={setPost} postPage />
                 <Container className={appStyles.Content}>
                     Comments
                 </Container>
