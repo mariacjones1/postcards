@@ -8,7 +8,7 @@ import Avatar from './Avatar';
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 
-const NavBar = () => {
+const NavBar = ({ setSelectedContinent }) => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
@@ -59,13 +59,55 @@ const NavBar = () => {
             id={styles.Dropdown}
         >
             <div>
-                <NavLink className={styles.DropdownItem} to="/posts/africa">Africa</NavLink>
-                <NavLink className={styles.DropdownItem} to="/posts/antartica">Antartica</NavLink>
-                <NavLink className={styles.DropdownItem} to="/posts/posts/asia">Asia</NavLink>
-                <NavLink className={styles.DropdownItem} to="/posts/europe">Europe</NavLink>
-                <NavLink className={styles.DropdownItem} to="/posts/northamerica">North America</NavLink>
-                <NavLink className={styles.DropdownItem} to="/posts/oceania">Oceania</NavLink>
-                <NavLink className={styles.DropdownItem} to="/posts/southamerica">South America</NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/africa"
+                    onClick={() => setSelectedContinent("AF")}
+                >
+                    Africa
+                </NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/antartica"
+                    onClick={() => setSelectedContinent("AN")}
+                >
+                    Antartica
+                </NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/asia"
+                    onClick={() => setSelectedContinent("AS")}
+                >
+                    Asia
+                </NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/europe"
+                    onClick={() => setSelectedContinent("EU")}
+                >
+                    Europe
+                </NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/northamerica"
+                    onClick={() => setSelectedContinent("NA")}
+                >
+                    North America
+                </NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/oceania"
+                    onClick={() => setSelectedContinent("OC")}
+                >
+                    Oceania
+                </NavLink>
+                <NavLink
+                    className={styles.DropdownItem}
+                    to="/posts/southamerica"
+                    onClick={() => setSelectedContinent("SA")}
+                >
+                    South America
+                </NavLink>
             </div>
         </NavDropdown>
         <NavLink

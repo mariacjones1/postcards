@@ -15,14 +15,16 @@ import Footer from './components/Footer';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
 import {useCurrentUser} from "./contexts/CurrentUserContext";
+import { useState } from "react";
 
 function App() {
     const currentUser = useCurrentUser();
     const profile_id = currentUser?.profile_id || "";
+    const [selectedContinent, setSelectedContinent] = useState("");
 
     return (
         <div className={styles.App}>
-            <NavBar />
+            <NavBar setSelectedContinent={setSelectedContinent} />
             <Container className={styles.Main}>
                 <Switch>
                     <Route
@@ -49,15 +51,15 @@ function App() {
                              />
                         )}
                     />
-                    {/* <Route
+                    <Route
                         exact path="/posts/:continent"
                         render={() => (
                             <PostsPage
                                 message="No posts found, try another continent"
-                                filter="continent"
+                                filter={`continent=${selectedContinent}`}
                              />
                         )}
-                    /> */}
+                    />
                     <Route exact path="/signin" render={() => <SignInForm />} />
                     <Route exact path="/signup" render={() => <SignUpForm />} />
                     <Route exact path="/posts/create" render={() => <PostCreateForm />} />
