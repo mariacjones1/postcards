@@ -28,13 +28,15 @@ function App() {
             <Container className={styles.Main}>
                 <Switch>
                     <Route
-                        exact path="/"
+                        exact
+                        path="/"
                         render={() => (
                             <PostsPage message="No results found for your search terms. Please try something else!" />
                         )}
                     />
                     <Route
-                        exact path="/feed"
+                        exact
+                        path="/feed"
                         render={() => (
                             <PostsPage
                                 message="The users you follow haven't posted yet, try following some new ones!"
@@ -43,7 +45,8 @@ function App() {
                         )}
                     />
                     <Route
-                        exact path="/liked"
+                        exact
+                        path="/liked"
                         render={() => (
                             <PostsPage
                                 message="You haven't liked any posts"
@@ -52,7 +55,8 @@ function App() {
                         )}
                     />
                     <Route
-                        exact path="/posts/:continent"
+                        exact
+                        path="/posts/continent/:continent"
                         render={() => (
                             <PostsPage
                                 message="No posts found, try another continent"
@@ -60,10 +64,10 @@ function App() {
                              />
                         )}
                     />
+                    <Route exact path="/posts/:id" render={() => <PostPage />} />
                     <Route exact path="/signin" render={() => <SignInForm />} />
                     <Route exact path="/signup" render={() => <SignUpForm />} />
                     <Route exact path="/posts/create" render={() => <PostCreateForm />} />
-                    <Route exact path="/posts/:id" render={() => <PostPage />} />
                     <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
                     <Route
                         exact

@@ -10,14 +10,14 @@ import styles from "../../styles/PostsPage.module.css";
 import {useLocation} from "react-router";
 import {axiosReq} from "../../api/axiosDefaults";
 
-import Post from './Post';
+import PostPreview from './PostPreview';
 import PopularProfiles from '../profiles/PopularProfiles';
 import TrendingProfiles from '../profiles/TrendingProfiles';
 import Asset from "../../components/Asset";
 
 import NoResults from "../../assets/no-results.png";
 
-const PostsPage = ({message, filter=""}) => {
+function PostsPage({message, filter = ""}) {
     const [posts, setPosts] = useState({results: []});
     const [hasLoaded, setHasLoaded] = useState(false);
     const {pathname} = useLocation();
@@ -27,7 +27,7 @@ const PostsPage = ({message, filter=""}) => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const {data} = await axiosReq.get(`/posts/?${filter}&search=${query}`)
+                const {data} = await axiosReq.get(`/posts/?${filter}&search=${query}`);
                 setPosts(data);
                 setHasLoaded(true);
             } catch (err) {
@@ -42,7 +42,7 @@ const PostsPage = ({message, filter=""}) => {
         return () => {
             clearTimeout(timer);
         }
-    }, [filter, query, pathname])
+    }, [filter, query, pathname]);
 
     return (
         <Row className="h-100">
@@ -61,8 +61,8 @@ const PostsPage = ({message, filter=""}) => {
                 {hasLoaded ? (
                     <>
                         {posts.results.length ? (
-                            posts.results.map(post => (
-                                <Post key={post.id} {...post} setPosts={setPosts} />
+                            posts.results.map((post) => (
+                                <PostPreview key={post.id} {...post} setPosts={setPosts} />
                             ))
                         ) : (
                             <Container className={appStyles.Content}>

@@ -61,49 +61,49 @@ const NavBar = ({ setSelectedContinent }) => {
             <div>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/africa"
+                    to="/posts/continent/africa"
                     onClick={() => setSelectedContinent("AF")}
                 >
                     Africa
                 </NavLink>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/antartica"
+                    to="/posts/continent/antartica"
                     onClick={() => setSelectedContinent("AN")}
                 >
                     Antartica
                 </NavLink>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/asia"
+                    to="/posts/continent/asia"
                     onClick={() => setSelectedContinent("AS")}
                 >
                     Asia
                 </NavLink>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/europe"
+                    to="/posts/continent/europe"
                     onClick={() => setSelectedContinent("EU")}
                 >
                     Europe
                 </NavLink>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/northamerica"
+                    to="/posts/continent/northamerica"
                     onClick={() => setSelectedContinent("NA")}
                 >
                     North America
                 </NavLink>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/oceania"
+                    to="/posts/continent/oceania"
                     onClick={() => setSelectedContinent("OC")}
                 >
                     Oceania
                 </NavLink>
                 <NavLink
                     className={styles.DropdownItem}
-                    to="/posts/southamerica"
+                    to="/posts/continent/southamerica"
                     onClick={() => setSelectedContinent("SA")}
                 >
                     South America

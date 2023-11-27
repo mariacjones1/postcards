@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, Col, Media, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
+import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import styles from "../../styles/Post.module.css";
-import stamp from "../../assets/post-stamp.png";
+import postStyles from "../../styles/Post.module.css";
+import styles from "../../styles/PostPreview.module.css";
 import { axiosRes } from '../../api/axiosDefaults';
 
 const Post = (props) => {
@@ -17,10 +17,7 @@ const Post = (props) => {
         likes_count,
         like_id,
         title,
-        content,
         image,
-        continent_display,
-        holiday_type_display,
         updated_at,
         postPage,
         setPosts,
@@ -62,8 +59,8 @@ const Post = (props) => {
     }
 
     return (
-        <Card className={styles.Post}>
-            <Card.Body  className={styles.Title}>
+        <Card className={postStyles.Post}>
+            <Card.Body  className={postStyles.Title}>
                 <Media className="align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={55} />
@@ -75,41 +72,44 @@ const Post = (props) => {
                     </div>
                 </Media>
             </Card.Body>
-            <Card.Body className={styles.Title}>
+            <Card.Body>
+                <Link to={`/posts/${id}`}>
+                    <Card.Img className={styles.ImagePreview} src={image} alt={title} />
+                </Link>
+            </Card.Body>
+            <Card.Body className={postStyles.Title}>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
             </Card.Body>
-            <Row>
-                <Col md={6}>
-                    <Card.Body>
-                        <Card.Img src={image} alt={title} />
-                    </Card.Body>
-                </Col>
-                <Col md={6}>
-                    <Card.Body className={`${styles.Text} align-items-center`}>
-                        <Card.Img className={styles.Stamp} src={stamp} alt={stamp} right />
-                        {content && <Card.Text>{content}</Card.Text>}
-                        <br />
-                        {holiday_type_display && continent_display && <Card.Text className={styles.Additional}>{holiday_type_display} holiday in {continent_display}</Card.Text>}
-                    </Card.Body>
-                </Col>
-            </Row>
-
             <Card.Body>
-                <div className={styles.PostBar}>
+                <div className={postStyles.PostBar}>
                     {is_owner ? (
-                        <OverlayTrigger placement="top" overlay={<Tooltip className={styles.NoWrap}>You can't like your own post :&#40;</Tooltip>}>
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={
+                                <Tooltip className={postStyles.NoWrap}>
+                                    You can't like your own post :&#40;
+                                </Tooltip>
+                            }
+                        >
                             <i className="far fa-heart" />
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={handleUnlike}>
-                            <i className={`fas fa-heart ${styles.Heart}`} />
+                            <i className={`fas fa-heart ${postStyles.Heart}`} />
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleLike}>
-                            <i className={`far fa-heart ${styles.HeartOutline}`} />
+                            <i className={`far fa-heart ${postStyles.HeartOutline}`} />
                         </span>
                     ) : (
-                        <OverlayTrigger placement="top" overlay={<Tooltip className={styles.NoWrap}>Log in to like posts :&#41;</Tooltip>}>
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={
+                                <Tooltip className={postStyles.NoWrap}>
+                                    Log in to like posts :&#41;
+                                </Tooltip>
+                            }
+                        >
                             <i className="far fa-heart" />
                         </OverlayTrigger>
                     )}
