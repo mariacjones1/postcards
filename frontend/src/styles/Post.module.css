@@ -1,0 +1,24 @@
+.Post {
+    background-color: #DCF4F5;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.Post figure,
+h5 {
+    margin: 0 0;
+}
+
+.Heart {
+    color: #eb0768;
+}
+
+.Heart:hover {
+    color: #2142b2;
+}
+
+.HeartOutline:hover {
+    color: #eb0768;
+}
