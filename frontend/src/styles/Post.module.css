@@ -11,11 +11,29 @@ h5 {
     margin: 0 0;
 }
 
+.Title {
+    padding-bottom: 0px;
+}
+
 .Text {
     background-color: white;
     text-decoration: underline;
     text-underline-offset: 8px;
-    vertical-align: middle;
+    font-family: 'Kalam', cursive;
+    margin-top: 10%;
+    margin-right: 25px;
+    height: 80%;
+}
+
+.Additional {
+    font-size: 80%;
+}
+
+.Stamp {
+    object-fit: contain;
+    max-height: 40px;
+    padding-left: 80%;
+    margin-bottom: 20px;
 }
 
 .Heart {
@@ -33,4 +51,12 @@ h5 {
 .NoWrap {
     white-space: nowrap;
     max-width: none;
+}
+
+@media screen and (max-width: 767px) {
+    .Text {
+        max-width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

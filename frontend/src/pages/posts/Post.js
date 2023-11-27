@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from "../../styles/Post.module.css";
+import stamp from "../../assets/post-stamp.png";
 
 const Post = (props) => {
     const {
@@ -17,8 +18,8 @@ const Post = (props) => {
         title,
         content,
         image,
-        continent,
-        holiday_type,
+        continent_display,
+        holiday_type_display,
         updated_at,
         postPage,
     } = props;
@@ -28,7 +29,7 @@ const Post = (props) => {
 
     return (
         <Card className={styles.Post}>
-            <Card.Body>
+            <Card.Body  className={styles.Title}>
                 <Media className="align-items-center justify-content-between">
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={55} />
@@ -40,18 +41,23 @@ const Post = (props) => {
                     </div>
                 </Media>
             </Card.Body>
+            <Card.Body className={styles.Title}>
+                {title && <Card.Title className="text-center">{title}</Card.Title>}
+            </Card.Body>
             <Row>
-                <Col>
+                <Col md={6}>
                     <Card.Body>
-                        {title && <Card.Title className="text-center">{title}</Card.Title>}
                         <Link to={`posts/${id}`}>
                             <Card.Img src={image} alt={title} />
                         </Link>
                     </Card.Body>
                 </Col>
-                <Col>
-                    <Card.Body className={styles.Text}>
+                <Col md={6}>
+                    <Card.Body className={`${styles.Text} align-items-center`}>
+                        <Card.Img className={styles.Stamp} src={stamp} alt={stamp} right />
                         {content && <Card.Text>{content}</Card.Text>}
+                        <br />
+                        {holiday_type_display && continent_display && <Card.Text className={styles.Additional}>{holiday_type_display} holiday in {continent_display}</Card.Text>}
                     </Card.Body>
                 </Col>
             </Row>
