@@ -14,15 +14,50 @@ import ContactForm from './pages/contact/ContactForm';
 import Footer from './components/Footer';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
+import {useCurrentUser} from "./contexts/CurrentUserContext";
 
 function App() {
+    const currentUser = useCurrentUser();
+    const profile_id = currentUser?.profile_id || "";
 
     return (
         <div className={styles.App}>
             <NavBar />
             <Container className={styles.Main}>
                 <Switch>
-                    <Route exact path="/" render={() => <PostsPage />} />
+                    <Route
+                        exact path="/"
+                        render={() => (
+                            <PostsPage message="No results found for your search terms. Please try something else!" />
+                        )}
+                    />
+                    <Route
+                        exact path="/feed"
+                        render={() => (
+                            <PostsPage
+                                message="The users you follow haven't posted yet, try following some new ones!"
+                                filter={`owner__followed__owner__profile=${profile_id}&`}
+                             />
+                        )}
+                    />
+                    <Route
+                        exact path="/liked"
+                        render={() => (
+                            <PostsPage
+                                message="You haven't liked any posts"
+                                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                             />
+                        )}
+                    />
+                    {/* <Route
+                        exact path="/posts/:continent"
+                        render={() => (
+                            <PostsPage
+                                message="No posts found, try another continent"
+                                filter="continent"
+                             />
+                        )}
+                    /> */}
                     <Route exact path="/signin" render={() => <SignInForm />} />
                     <Route exact path="/signup" render={() => <SignUpForm />} />
                     <Route exact path="/posts/create" render={() => <PostCreateForm />} />
