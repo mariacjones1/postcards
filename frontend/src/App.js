@@ -14,7 +14,7 @@ import ContactForm from './pages/contact/ContactForm';
 import Footer from './components/Footer';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
-import {useCurrentUser} from "./contexts/CurrentUserContext";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 import { useState } from "react";
 
 function App() {
@@ -40,8 +40,8 @@ function App() {
                         render={() => (
                             <PostsPage
                                 message="The users you follow haven't posted yet, try following some new ones!"
-                                filter={`owner__followed__owner__profile=${profile_id}&`}
-                             />
+                                filter={`owner__followed__owner__profile=${profile_id}`}
+                            />
                         )}
                     />
                     <Route
@@ -50,8 +50,8 @@ function App() {
                         render={() => (
                             <PostsPage
                                 message="You haven't liked any posts"
-                                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-                             />
+                                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at`}
+                            />
                         )}
                     />
                     <Route
@@ -61,7 +61,7 @@ function App() {
                             <PostsPage
                                 message="No posts found, try another continent"
                                 filter={`continent=${selectedContinent}`}
-                             />
+                            />
                         )}
                     />
                     <Route exact path="/posts/:id" render={() => <PostPage />} />
