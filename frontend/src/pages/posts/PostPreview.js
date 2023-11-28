@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import postStyles from "../../styles/Post.module.css";
-import styles from "../../styles/PostPreview.module.css";
+import appStyles from "../../App.module.css";
 import { useSetPostData } from '../../contexts/PostDataContext';
 
 const Post = (props) => {
@@ -38,13 +38,13 @@ const Post = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && postPage && "..."}
+                        {is_owner && postPage}
                     </div>
                 </Media>
             </Card.Body>
             <Card.Body>
                 <Link to={`/posts/${id}`}>
-                    <Card.Img className={styles.ImagePreview} src={image} alt={title} />
+                    <Card.Img className={appStyles.Image} src={image} alt={title} />
                 </Link>
             </Card.Body>
             <Card.Body className={postStyles.Title}>

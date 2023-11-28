@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Col, Media, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from "../../styles/Post.module.css";
 import stamp from "../../assets/post-stamp.png";
 import { useSetPostData } from '../../contexts/PostDataContext';
+import { MoreDropdown } from '../../components/MoreDropdown';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Post = (props) => {
     const {
@@ -28,8 +30,22 @@ const Post = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const history = useHistory();
 
     const { handleLike, handleUnlike } = useSetPostData();
+
+    const handleEdit = () => {
+        history.push(`/posts/${id}/edit`);
+    };
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/posts/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return (
         <Card className={styles.Post}>
@@ -41,7 +57,7 @@ const Post = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && postPage && "..."}
+                        {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
                     </div>
                 </Media>
             </Card.Body>

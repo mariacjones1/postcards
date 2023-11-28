@@ -26,6 +26,12 @@
     width: 100%;
 }
 
+.Image {
+    max-height: 450px;
+    width: auto;
+    max-width: 100%;
+}
+
 a {
     transition: color ease-in-out 0.3s;
     color: #2e6980;
