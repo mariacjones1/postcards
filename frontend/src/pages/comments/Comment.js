@@ -30,7 +30,7 @@ const Comment = (props) => {
 
     const handleDelete = async () => {
         try {
-            await axiosRes.delete(`/comments/${id}`);
+            await axiosRes.delete(`/comments/${id}/`);
             setPost(prevPost => ({
                 results: [{
                     ...prevPost.results[0],
@@ -65,7 +65,7 @@ const Comment = (props) => {
 
     const handleCommentUnlike = async () => {
         try {
-            await axiosRes.delete(`/comments/likes/${comment_like_id}`);
+            await axiosRes.delete(`/comments/likes/${comment_like_id}/`);
             setComments((prevComments) => ({
                 ...prevComments,
                 results: prevComments.results.map((comment) => {
