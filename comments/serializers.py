@@ -7,8 +7,8 @@ from comment_likes.models import CommentLike
 class CommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source='owner.id')
-    profile_image = serializers.ReadOnlyField(source='owner.image.url')
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     comment_like_id = serializers.SerializerMethodField()
     comment_likes_count = serializers.ReadOnlyField()
     created_at = serializers.SerializerMethodField()

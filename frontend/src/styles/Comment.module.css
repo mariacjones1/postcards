@@ -1,0 +1,22 @@
+.Owner {
+    font-weight: bold;
+    color: #252550;
+    margin-right: 8px;
+}
+
+.Date {
+    font-weight: lighter;
+    color: #c1c1c5;
+}
+
+.Avatar {
+    min-width: 10%;
+}
+
+.Like {
+    max-width: 10%;
+}
+
+.Like i {
+    font-size: 100%;
+}
