@@ -5,7 +5,7 @@ import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import postStyles from "../../styles/Post.module.css";
 import styles from "../../styles/PostPreview.module.css";
-import { axiosRes } from '../../api/axiosDefaults';
+import { useSetPostData } from '../../contexts/PostDataContext';
 
 const Post = (props) => {
     const {
@@ -26,37 +26,7 @@ const Post = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
-    const handleLike = async () => {
-        try {
-            const { data } = await axiosRes.post("/likes/", { post: id });
-            setPosts((prevPosts) => ({
-                ...prevPosts,
-                results: prevPosts.results.map((post) => {
-                    return post.id === id
-                        ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-                        : post;
-                })
-            }));
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
-    const handleUnlike = async () => {
-        try {
-            await axiosRes.delete(`/likes/${like_id}/`);
-            setPosts((prevPosts) => ({
-                ...prevPosts,
-                results: prevPosts.results.map((post) => {
-                    return post.id === id
-                        ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                        : post;
-                })
-            }));
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    const { handleLike, handleUnlike } = useSetPostData();
 
     return (
         <Card className={postStyles.Post}>
@@ -94,11 +64,11 @@ const Post = (props) => {
                             <i className="far fa-heart" />
                         </OverlayTrigger>
                     ) : like_id ? (
-                        <span onClick={handleUnlike}>
+                        <span onClick={() => handleUnlike(like_id, id, setPosts)}>
                             <i className={`fas fa-heart ${postStyles.Heart}`} />
                         </span>
                     ) : currentUser ? (
-                        <span onClick={handleLike}>
+                        <span onClick={() => handleLike(id, setPosts)}>
                             <i className={`far fa-heart ${postStyles.HeartOutline}`} />
                         </span>
                     ) : (

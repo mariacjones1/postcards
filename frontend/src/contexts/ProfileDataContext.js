@@ -73,23 +73,16 @@ export const ProfileDataProvider = ({ children }) => {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq.get(
+                const { data: popular } = await axiosReq.get(
                     "/profiles/?ordering=-followers_count"
                 );
-                setProfileData((prevState) => ({
-                    ...prevState,
-                    popularProfiles: data,
-                }));
-            } catch (err) {
-                console.log(err);
-            }
-            try {
-                const { data } = await axiosReq.get(
+                const { data: trending } = await axiosReq.get(
                     "/profiles/?ordering=-recent_followers_count"
                 );
                 setProfileData((prevState) => ({
                     ...prevState,
-                    trendingProfiles: data,
+                    popularProfiles: popular,
+                    trendingProfiles: trending,
                 }));
             } catch (err) {
                 console.log(err);
