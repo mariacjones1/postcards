@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Media, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Col, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
@@ -7,6 +7,7 @@ import { MoreDropdown } from '../../components/MoreDropdown';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/Comment.module.css';
 import postStyles from "../../styles/Post.module.css";
+import CommentEditForm from "./CommentEditForm";
 
 const Comment = (props) => {
     const {
@@ -21,6 +22,8 @@ const Comment = (props) => {
         setPost,
         setComments,
     } = props;
+
+    const [showEditForm, setShowEditForm] = useState(false);
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
@@ -52,18 +55,28 @@ const Comment = (props) => {
                     <Avatar src={profile_image} />
                 </Link>
                 <Media.Body className="align-self-center ml-2">
-                    <Row>
-                        <span className={styles.Owner}>{owner}</span>
-                        <span className={styles.Date}>{updated_at}</span>
-                    </Row>
-                    <Row>
+                    <span className={styles.Owner}>{owner}</span>
+                    <span className={styles.Date}>{updated_at}</span>
+                    {showEditForm ? (
+                        <CommentEditForm
+                            id={id}
+                            profile_id={profile_id}
+                            content={content}
+                            profileImage={profile_image}
+                            setComments={setComments}
+                            setShowEditForm={setShowEditForm}
+                        />
+                    ) : (
                         <p>{content}</p>
-                    </Row>
+                    )}
                 </Media.Body>
                 <Col xs={2} className={styles.Like}>
                     <div className={styles.Dropdown}>
                         {is_owner && (
-                            <MoreDropdown handleEdit={() => { }} handleDelete={handleDelete} />
+                            <MoreDropdown
+                                handleEdit={() => setShowEditForm(true)}
+                                handleDelete={handleDelete}
+                            />
                         )}
                     </div>
                     <div className={postStyles.NoWrap}>
