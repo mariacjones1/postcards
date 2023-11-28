@@ -6,20 +6,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-import Upload from "../../assets/upload.png";
-
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from '../../components/Asset';
 import { axiosReq } from '../../api/axiosDefaults';
 import { Alert, Image } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { useRedirect } from '../../hooks/useRedirect';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-function PostCreateForm() {
-    useRedirect("loggedOut");
-
+function PostEditForm() {
     const [postData, setPostData] = useState({
         title: "",
         content: "",
@@ -40,10 +34,29 @@ function PostCreateForm() {
 
     const imageInput = useRef(null);
     const history = useHistory();
+    const { id } = useParams();
 
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
+        const handleMount = async () => {
+            try {
+                const { data } = await axiosReq.get(`/posts/${id}/`);
+                const {
+                    title,
+                    content,
+                    image,
+                    continent,
+                    holiday_type,
+                    is_owner
+                } = data;
+
+                is_owner ? setPostData({ title, content, image, continent, holiday_type }) : history.push('/');
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
         const fetchContinents = async () => {
             try {
                 const response = await axiosReq.get('/get_continents/');
@@ -62,9 +75,10 @@ function PostCreateForm() {
             }
         };
 
+        handleMount();
         fetchContinents();
         fetchHolidayTypes();
-    }, []);
+    }, [history, id]);
 
     const handleChange = (event) => {
         setPostData((prevData) => ({
@@ -88,13 +102,16 @@ function PostCreateForm() {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('content', content);
-        formData.append('image', imageInput.current.files[0]);
         formData.append('continent', continent);
         formData.append('holiday_type', holiday_type);
 
+        if (imageInput?.current?.files[0]) {
+            formData.append('image', imageInput.current.files[0]);
+        }
+
         try {
-            const { data } = await axiosReq.post("/posts/", formData);
-            history.push(`/posts/${data.id}`);
+            await axiosReq.put(`/posts/${id}/`, formData);
+            history.push(`/posts/${id}`);
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
@@ -193,28 +210,19 @@ function PostCreateForm() {
                         className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
                     >
                         <Form.Group className="text-center">
-                            {image ? (
-                                <>
-                                    <figure>
-                                        <Image className={appStyles.Image} src={image} rounded />
-                                    </figure>
-                                    <div>
-                                        <Form.Label
-                                            className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                                            htmlFor="image-upload"
-                                        >
-                                            Change the image
-                                        </Form.Label>
-                                    </div>
-                                </>
-                            ) : (
-                                <Form.Label
-                                    className="d-flex justify-content-center"
-                                    htmlFor="image-upload"
-                                >
-                                    <Asset src={Upload} message="Click or tap to upload an image" />
-                                </Form.Label>
-                            )}
+                            <>
+                                <figure>
+                                    <Image className={appStyles.Image} src={image} rounded />
+                                </figure>
+                                <div>
+                                    <Form.Label
+                                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                        htmlFor="image-upload"
+                                    >
+                                        Change the image
+                                    </Form.Label>
+                                </div>
+                            </>
                             <Form.File
                                 id="image-upload"
                                 accept="image/*"
@@ -244,7 +252,7 @@ function PostCreateForm() {
                         Cancel
                     </Button>
                     <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-                        Create
+                        Save
                     </Button>
                 </Col>
             </Row>
@@ -252,4 +260,4 @@ function PostCreateForm() {
     );
 }
 
-export default PostCreateForm;
+export default PostEditForm;
