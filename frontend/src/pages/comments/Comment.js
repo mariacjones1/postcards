@@ -47,6 +47,38 @@ const Comment = (props) => {
         }
     };
 
+    const handleCommentLike = async () => {
+        try {
+            const { data } = await axiosRes.post("/comments/likes/", { comment: id });
+            setComments((prevComments) => ({
+                ...prevComments,
+                results: prevComments.results.map((comment) => {
+                    return comment.id === id
+                        ? { ...comment, comment_likes_count: comment.comment_likes_count + 1, comment_like_id: data.id }
+                        : comment;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleCommentUnlike = async () => {
+        try {
+            await axiosRes.delete(`/comments/likes/${comment_like_id}`);
+            setComments((prevComments) => ({
+                ...prevComments,
+                results: prevComments.results.map((comment) => {
+                    return comment.id === id
+                        ? { ...comment, comment_likes_count: comment.comment_likes_count - 1, comment_like_id: null }
+                        : comment;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <div>
             <hr />
@@ -85,11 +117,11 @@ const Comment = (props) => {
                                 <i className="far fa-heart" />
                             </OverlayTrigger>
                         ) : comment_like_id ? (
-                            <span onClick={() => { }}>
+                            <span onClick={handleCommentUnlike}>
                                 <i className={`fas fa-heart ${postStyles.Heart}`} />
                             </span>
                         ) : currentUser ? (
-                            <span onClick={() => { }}>
+                            <span onClick={handleCommentLike}>
                                 <i className={`far fa-heart ${postStyles.HeartOutline}`} />
                             </span>
                         ) : (
