@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
@@ -59,55 +59,76 @@ const NavBar = ({ setSelectedContinent }) => {
             id={styles.Dropdown}
         >
             <div>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/africa"
-                    onClick={() => setSelectedContinent("AF")}
-                >
-                    Africa
-                </NavLink>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/antartica"
-                    onClick={() => setSelectedContinent("AN")}
-                >
-                    Antartica
-                </NavLink>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/asia"
-                    onClick={() => setSelectedContinent("AS")}
-                >
-                    Asia
-                </NavLink>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/europe"
-                    onClick={() => setSelectedContinent("EU")}
-                >
-                    Europe
-                </NavLink>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/northamerica"
-                    onClick={() => setSelectedContinent("NA")}
-                >
-                    North America
-                </NavLink>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/oceania"
-                    onClick={() => setSelectedContinent("OC")}
-                >
-                    Oceania
-                </NavLink>
-                <NavLink
-                    className={styles.DropdownItem}
-                    to="/posts/continent/southamerica"
-                    onClick={() => setSelectedContinent("SA")}
-                >
-                    South America
-                </NavLink>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/africa"
+                        onClick={() => setSelectedContinent("AF")}
+                    >
+                        Africa
+                    </NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/antarctica"
+                        onClick={() => setSelectedContinent("AN")}
+                    >
+                        Antartica
+                    </NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/asia"
+                        onClick={() => setSelectedContinent("AS")}
+                    >
+                        Asia
+                    </NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/europe"
+                        onClick={() => setSelectedContinent("EU")}
+                    >
+                        Europe
+                    </NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/northamerica"
+                        onClick={() => setSelectedContinent("NA")}
+                    >
+                        North America
+                    </NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/oceania"
+                        onClick={() => setSelectedContinent("OC")}
+                    >
+                        Oceania
+                    </NavLink>
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.DropdownItem}>
+                    <NavLink
+                        as="div"
+                        className={styles.DropdownLink}
+                        to="/posts/continent/southamerica"
+                        onClick={() => setSelectedContinent("SA")}
+                    >
+                        South America
+                    </NavLink>
+                </Dropdown.Item>
             </div>
         </NavDropdown>
         <NavLink
