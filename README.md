@@ -65,6 +65,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 ### User stories
 
 #### Navigation and authentication
+
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#1](https://github.com/mariacjones1/postcards/issues/1) | Navigation | As a user, I can view the same navbar on each page, so that I can easily navigate between pages. |
@@ -79,6 +80,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | [#40](https://github.com/mariacjones1/postcards/issues/40) | User redirects | As a user, I can only access pages relevant to my logged-in/logged-out status, so that my user experience is not compromised by allowing me to access irrelevant pages. |
 
 #### Profile page
+
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#8](https://github.com/mariacjones1/postcards/issues/8) | Profile pictures  | As a user, I can view other users' profile pictures, so that I can easily identify them. |
@@ -92,6 +94,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | [#39](https://github.com/mariacjones1/postcards/issues/1) | View posts on profile page | As a user, I can view users' posts on their profile page, so that I can see all the posts by that user. |
 
 #### Posts page
+
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#12](https://github.com/mariacjones1/postcards/issues/12) | View recent posts | As a user, I can view the most recent posts by all users, ordered by most recently created first, so that I am up to date with the newest content. |
@@ -102,6 +105,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | [#17](https://github.com/mariacjones1/postcards/issues/17) | Infinite scroll | As a user, I can keep scrolling through the posts as they are automatically loaded on the site, so that I don't have to click on "next page" etc. |
 
 #### Single post page
+
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#18](https://github.com/mariacjones1/postcards/issues/18) | Post page | As a user, I can view the page of a selected post, so that I can read the caption and view the comments on it. |
@@ -115,6 +119,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | [#45](https://github.com/mariacjones1/postcards/issues/45) | View comments | As a user, I can view comments under a selected post, so that I can see other people's thoughts and interact with them. |
 
 #### Adding and liking posts
+
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#9](https://github.com/mariacjones1/postcards/issues/9) | Create posts | As a logged-in user, I can create my own posts, so that I can share my them with other users. |
@@ -123,6 +128,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | [#44](https://github.com/mariacjones1/postcards/issues/44) | Delete post | As a post owner, I can delete any of my posts, so that I can remove any posts I no longer want people to see. |
 
 #### Contact form
+
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#32](https://github.com/mariacjones1/postcards/issues/32) | Contact form | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. |

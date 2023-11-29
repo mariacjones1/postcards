@@ -13,8 +13,9 @@ class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
     followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
     recent_followers_count = serializers.ReadOnlyField()
-    location = CountryField(name_only=True)
-    favourite_country = CountryField(name_only=True)
+    location = CountryField(name_only=True, allow_blank=True, required=False)
+    favourite_country = CountryField(
+        name_only=True, allow_blank=True, required=False)
     travel_experience = serializers.ChoiceField(
         choices=Profile.TRAVEL_EXPERIENCE_CHOICES)
     travel_experience_display = serializers.ReadOnlyField(
