@@ -36,7 +36,13 @@ function SignInForm() {
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
             setCurrentUser(data.user);
-            history.goBack();
+
+            if (history.location.state && history.location.state.from && history.location.state.from.pathname !== '/signup') {
+                history.goBack();
+            } else {
+                history.push("/");
+            }
+
         } catch (err) {
             setErrors(err.response?.data);
         }

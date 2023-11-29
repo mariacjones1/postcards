@@ -22,8 +22,8 @@ class Profile(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../default_profile_xecywf'
     )
-    location = CountryField(blank=True, null=True)
-    favourite_country = CountryField(blank=True, null=True)
+    location = CountryField(blank=True)
+    favourite_country = CountryField(blank=True)
     travel_experience = models.CharField(
         max_length=20,
         choices=TRAVEL_EXPERIENCE_CHOICES,
