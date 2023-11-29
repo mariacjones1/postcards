@@ -102,7 +102,7 @@ const ContactForm = () => {
                 <Image
                     className={`${styles.FillerImage}`}
                     src={
-                        "https://res.cloudinary.com/dvywqvgif/image/upload/v1700759276/postcard-hero_izfn5b.png"
+                        "https://res.cloudinary.com/dvywqvgif/image/upload/v1701287626/pexels-nina-mace-photography-3913555_spkzyl.jpg"
                     }
                 />
             </Col>
