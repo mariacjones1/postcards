@@ -10,7 +10,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
-    const { post, setPost, setComments, profileImage, profile_id, comment_likes_count } = props;
+    const { post, setPost, setComments, profileImage, profile_id } = props;
     const [content, setContent] = useState("");
 
     const handleChange = (event) => {

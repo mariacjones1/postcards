@@ -47,6 +47,12 @@ h5 {
     color: #eb0768;
 }
 
+.Comment:hover {
+    cursor: default;
+    transition: none;
+    color: #489abb;
+}
+
 .NoWrap {
     white-space: nowrap;
     max-width: none;
