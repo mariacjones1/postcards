@@ -1,39 +1,195 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Postcards travel photo sharing platform
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+Final website: 
 
-## Codeanywhere Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
 
-`python3 -m http.server`
+<hr>
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Table of contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+- [Postcards travel photo sharing platform](#postcards-travel-photo-sharing-platform)
+  - [Table of contents](#table-of-contents)
+  - [Design and planning](#design-and-planning)
+    - [Site owner goals](#site-owner-goals)
+    - [User stories](#user-stories)
+    - [Models diagram](#models-diagram)
+    - [Wireframes](#wireframes)
+    - [Design choices](#design-choices)
+  - [Features](#features)
+    - [Responsive layouts](#responsive-layouts)
+    - [Favicon and title](#favicon-and-title)
+    - [Navigation](#navigation)
+    - [Custom error pages](#custom-error-pages)
+  - [Technology](#technology)
+    - [Languages used](#languages-used)
+    - [Frameworks, libraries and programs used](#frameworks-libraries-and-programs-used)
+  - [Testing](#testing)
+    - [User story and feature testing](#user-story-and-feature-testing)
+    - [Validator testing](#validator-testing)
+      - [HTML validator](#html-validator)
+      - [CSS validator](#css-validator)
+      - [JavaScript validator](#javascript-validator)
+      - [Python validator](#python-validator)
+    - [Browser tests](#browser-tests)
+    - [Device/screen size tests](#devicescreen-size-tests)
+    - [Dev Tools Lighthouse tests](#dev-tools-lighthouse-tests)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Media](#media)
+    - [Coding resources](#coding-resources)
+      - [General](#general)
+      - [Specific queries](#specific-queries)
+      - [Mentor](#mentor)
 
-`http_server`
+## Design and planning
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Site owner goals
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### User stories
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
----
+### Models diagram
 
-Happy coding!
+Created using [dbdiagram.io](https://dbdiagram.io/)
+
+
+
+### Wireframes
+
+Created using [Balsamiq](https://balsamiq.com/)
+
+
+### Design choices
+
+
+## Features
+
+### Responsive layouts
+
+
+
+### Favicon and title
+
+
+
+### Navigation
+
+
+
+### Custom error pages
+
+
+
+## Technology
+
+### Languages used
+
+
+### Frameworks, libraries and programs used
+
+
+## Testing
+
+### User story and feature testing
+
+
+
+### Validator testing
+
+#### HTML validator
+
+[W3C](https://validator.w3.org/)
+
+| File | Results |
+| --- | --- |
+
+
+#### CSS validator
+
+[W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator)
+
+| File | Results |
+| --- | --- |
+
+
+#### JavaScript validator
+
+[JSHint](https://jshint.com/)
+
+| File | Results |
+| --- | --- |
+
+
+#### Python validator
+
+[PEP8](https://pep8ci.herokuapp.com/)
+
+| File | Results |
+| --- | --- |
+
+
+### Browser tests
+
+| Browser | Layout | Features |
+| --- | --- | --- |
+| Chrome |  |  |
+| Firefox |  |  |
+| Edge |  |  |
+| Safari* |  |  |
+
+### Device/screen size tests
+
+(Tested using Dev Tools, portrait and landscape where applicable)
+
+| Device | Layout |
+| --- | --- |
+| HP laptop screen (size 1536 x 864) |  |
+| iPhone SE |  |
+| Pixel 5 |  |
+| Samsung Galaxy S20 Ultra |  |
+| iPad Air |  |
+| Surface Pro 7 |  |
+| Nest Hub |  |
+
+### Dev Tools Lighthouse tests
+
+path: "/"
+
+| Category | Score |
+| --- | --- |
+| Performance |  |
+| Accessability |  |
+| Best Practices |  |
+| SEO |  |
+
+
+
+## Deployment
+
+
+
+## Credits
+
+### Media
+
+
+
+### Coding resources
+
+#### General
+
+
+
+#### Specific queries
+
+
+
+#### Mentor
+
+
