@@ -39,30 +39,7 @@ const NavBar = ({ setSelectedContinent }) => {
         localStorage.setItem('selectedContinent', continent);
     };
 
-    const newPostcardIcon = (
-        <NavLink
-            className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="/posts/create"
-        >
-            <i className="fas fa-plus-square"></i>New postcard
-        </NavLink>
-    );
-    const loggedInIcons = <>
-        <NavLink
-            className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="/feed"
-        >
-            <i className="fas fa-stream"></i>Feed
-        </NavLink>
-        <NavLink
-            className={styles.NavLink}
-            activeClassName={styles.Active}
-            to="/liked"
-        >
-            <i className="fas fa-heart"></i>Liked
-        </NavLink>
+    const continentDropdown = !expanded ? (
         <NavDropdown
             className={styles.NavLink}
             activeClassName={styles.Active}
@@ -147,6 +124,119 @@ const NavBar = ({ setSelectedContinent }) => {
                 </Dropdown.Item>
             </div>
         </NavDropdown>
+    ) : (
+        <>
+            <p
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                id={styles.Dropdown} >
+                <span id="dropdown">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    Continents
+                </span>
+            </p >
+            <ul className={styles.expandedDropdown}>
+                <div>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/africa"
+                            onClick={() => handleContinentClick("AF")}
+                        >
+                            Africa
+                        </NavLink>
+                    </li>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/antarctica"
+                            onClick={() => handleContinentClick("AN")}
+                        >
+                            Antartica
+                        </NavLink>
+                    </li>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/asia"
+                            onClick={() => handleContinentClick("AS")}
+                        >
+                            Asia
+                        </NavLink>
+                    </li>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/europe"
+                            onClick={() => handleContinentClick("EU")}
+                        >
+                            Europe
+                        </NavLink>
+                    </li>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/northamerica"
+                            onClick={() => handleContinentClick("NA")}
+                        >
+                            North America
+                        </NavLink>
+                    </li>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/oceania"
+                            onClick={() => handleContinentClick("OC")}
+                        >
+                            Oceania
+                        </NavLink>
+                    </li>
+                    <li className={styles.DropdownItem}>
+                        <NavLink
+                            as="div"
+                            className={styles.DropdownLink}
+                            to="/posts/continent/southamerica"
+                            onClick={() => handleContinentClick("SA")}
+                        >
+                            South America
+                        </NavLink>
+                    </li>
+                </div>
+            </ul>
+        </>
+    );
+
+    const newPostcardIcon = (
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/posts/create"
+        >
+            <i className="fas fa-plus-square"></i>New postcard
+        </NavLink>
+    );
+    const loggedInIcons = <>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/feed"
+        >
+            <i className="fas fa-stream"></i>Feed
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/liked"
+        >
+            <i className="fas fa-heart"></i>Liked
+        </NavLink>
+        {continentDropdown}
         <NavLink
             className={styles.NavLink}
             to="/"

@@ -18,7 +18,7 @@
 
 .DropdownItem {
     display: block;
-    padding: 0.25rem 1.5rem;
+    padding: 0px;
     clear: both;
     font-weight: 400;
     color: #212529;
@@ -30,7 +30,12 @@
 }
 
 .DropdownLink {
-    width: 100%;
+    display: block;
+    padding: 0.25rem 1.5rem;
+}
+
+.expandedDropdown {
+    margin-top: -15px;
 }
 
 .DropdownItem:hover {
@@ -39,4 +44,10 @@
 
 .Active i {
     color: #252550;
+}
+
+@media screen and (max-width: 991px) {
+    .NavBar {
+        font-size: 90%;
+    }
 }
