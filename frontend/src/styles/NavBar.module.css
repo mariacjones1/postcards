@@ -12,6 +12,10 @@
     color: #2e6980;
 }
 
+.DropdownDiv {
+    width: 100px;
+}
+
 .DropdownItem {
     display: block;
     padding: 0.25rem 1.5rem;
@@ -22,6 +26,7 @@
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+    text-align: right;
 }
 
 .DropdownLink {

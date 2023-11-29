@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import styles from '../styles/NavBar.module.css';
@@ -21,6 +21,22 @@ const NavBar = ({ setSelectedContinent }) => {
         } catch (err) {
             console.log(err);
         }
+    };
+
+    useEffect(() => {
+        const storedContinent = localStorage.getItem('selectedContinent');
+        if (storedContinent) {
+            setSelectedContinent(storedContinent);
+        }
+
+        return () => {
+            localStorage.removeItem('selectedContinent');
+        };
+    }, [setSelectedContinent]);
+
+    const handleContinentClick = (continent) => {
+        setSelectedContinent(continent);
+        localStorage.setItem('selectedContinent', continent);
     };
 
     const newPostcardIcon = (
@@ -64,7 +80,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/africa"
-                        onClick={() => setSelectedContinent("AF")}
+                        onClick={() => handleContinentClick("AF")}
                     >
                         Africa
                     </NavLink>
@@ -74,7 +90,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/antarctica"
-                        onClick={() => setSelectedContinent("AN")}
+                        onClick={() => handleContinentClick("AN")}
                     >
                         Antartica
                     </NavLink>
@@ -84,7 +100,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/asia"
-                        onClick={() => setSelectedContinent("AS")}
+                        onClick={() => handleContinentClick("AS")}
                     >
                         Asia
                     </NavLink>
@@ -94,7 +110,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/europe"
-                        onClick={() => setSelectedContinent("EU")}
+                        onClick={() => handleContinentClick("EU")}
                     >
                         Europe
                     </NavLink>
@@ -104,7 +120,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/northamerica"
-                        onClick={() => setSelectedContinent("NA")}
+                        onClick={() => handleContinentClick("NA")}
                     >
                         North America
                     </NavLink>
@@ -114,7 +130,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/oceania"
-                        onClick={() => setSelectedContinent("OC")}
+                        onClick={() => handleContinentClick("OC")}
                     >
                         Oceania
                     </NavLink>
@@ -124,7 +140,7 @@ const NavBar = ({ setSelectedContinent }) => {
                         as="div"
                         className={styles.DropdownLink}
                         to="/posts/continent/southamerica"
-                        onClick={() => setSelectedContinent("SA")}
+                        onClick={() => handleContinentClick("SA")}
                     >
                         South America
                     </NavLink>
