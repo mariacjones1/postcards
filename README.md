@@ -90,9 +90,45 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ### Languages used
 
+- HTML5
+- CSS3
+- JavaScript
+- Python
 
 ### Frameworks, libraries and programs used
 
+- [Django REST Framework](https://www.django-rest-framework.org/)
+  - API framework
+- [React](https://react.dev/)
+  - Javascript library
+- [React Bootstrap](https://react-bootstrap-v4.netlify.app/)
+  - To assist with styling and responsiveness in React
+- [ElephantSQL](https://www.elephantsql.com/)
+  - For database storage
+- [Cloudinary](https://cloudinary.com/)
+  - For media storage
+- [Git](https://git-scm.com/)
+  - For version control
+- [GitHub](https://github.com/)
+  - For project storage
+- [Codeanywhere](https://app.codeanywhere.com/)
+  - IDE
+- [Font Awesome](https://fontawesome.com/)
+  - For sourcing text icons
+- [favicon.io](https://favicon.io/)
+  - To generate the favicon
+- [GIMP](https://www.gimp.org/)
+  - For image editing
+- [Balsamiq](https://balsamiq.com/)
+  - For creating wireframes
+- [dbdiagram.io](https://dbdiagram.io/)
+  - For creating the models diagram
+- [Pexels](https://www.pexels.com/)
+  - For sourcing images
+- [Google Images](https://images.google.co.uk/)
+  - For sourcing images
+- [Flaticon](https://www.flaticon.com/)
+  - For sourcing image icons
 
 ## Testing
 
