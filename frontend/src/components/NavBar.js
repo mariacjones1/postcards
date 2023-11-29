@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { Navbar, Container, Nav, NavDropdown, Dropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, Dropdown, NavLink } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import styles from '../styles/NavBar.module.css';
-import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import { removeTokenTimestamp } from '../utils/utils';
 
 const NavBar = ({ setSelectedContinent }) => {
     const currentUser = useCurrentUser();
@@ -18,6 +18,7 @@ const NavBar = ({ setSelectedContinent }) => {
         try {
             await axios.post('dj-rest-auth/logout/');
             setCurrentUser(null);
+            removeTokenTimestamp();
         } catch (err) {
             console.log(err);
         }
