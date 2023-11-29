@@ -10,7 +10,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
-    const { post, setPost, setComments, profileImage, profile_id } = props;
+    const { post, setPost, setComments, profileImage, profile_id, comment_likes_count } = props;
     const [content, setContent] = useState("");
 
     const handleChange = (event) => {
@@ -51,7 +51,7 @@ function CommentCreateForm(props) {
                     </Link>
                     <Form.Control
                         className={styles.Form}
-                        placeholder="my comment..."
+                        placeholder="Comment..."
                         as="textarea"
                         value={content}
                         onChange={handleChange}

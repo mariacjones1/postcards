@@ -129,7 +129,7 @@ const Comment = (props) => {
                                 <i className="far fa-heart" />
                             </OverlayTrigger>
                         )}
-                        {comment_likes_count}
+                        {comment_likes_count || 0}
                     </div>
                 </Col>
             </Media>
