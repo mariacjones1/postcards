@@ -17,6 +17,7 @@ import PostPage from './pages/posts/PostPage';
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import { useState } from "react";
 import PostEditForm from './pages/posts/PostEditForm';
+import NotFound from './components/NotFound';
 
 function App() {
     const currentUser = useCurrentUser();
@@ -87,7 +88,7 @@ function App() {
                         render={() => <ProfileEditForm />}
                     />
                     <Route exact path="/contact" render={() => <ContactForm />} />
-                    <Route render={() => <p>Page not found!</p>} />
+                    <Route render={() => <NotFound />} />
                 </Switch>
             </Container>
             <Footer />
