@@ -4,87 +4,6 @@ Postcards is a photo sharing website that allows users to share photos from thei
 
 Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postcards-mcj-2cd8ccaae35f.herokuapp.com/)
 
-## Table of contents
-
-- [Postcards travel photo sharing platform](#postcards-travel-photo-sharing-platform)
-  - [Table of contents](#table-of-contents)
-  - [Design and planning](#design-and-planning)
-    - [Site owner goals](#site-owner-goals)
-    - [User stories](#user-stories)
-      - [Navigation and authentication](#navigation-and-authentication)
-      - [Profile page](#profile-page)
-      - [Posts page](#posts-page)
-      - [Single post page](#single-post-page)
-      - [Adding and liking posts](#adding-and-liking-posts)
-      - [Contact form](#contact-form)
-    - [Models](#models)
-      - [Profile](#profile)
-      - [Post](#post)
-      - [Like](#like)
-      - [Comment](#comment)
-      - [CommentLike](#commentlike)
-      - [Follower](#follower)
-      - [Contact](#contact)
-    - [Wireframes](#wireframes)
-    - [Design choices](#design-choices)
-  - [Features](#features)
-    - [Responsive layouts](#responsive-layouts)
-    - [Favicon and title](#favicon-and-title)
-    - [Navigation](#navigation)
-    - [Homepage](#homepage)
-    - [Feed, Liked and Continent filters](#feed-liked-and-continent-filters)
-    - [Search bar](#search-bar)
-    - [Post preview component](#post-preview-component)
-    - [Post page](#post-page)
-    - [Create, edit and delete posts](#create-edit-and-delete-posts)
-    - [Post, edit and delete comments](#post-edit-and-delete-comments)
-    - [Like posts and comments](#like-posts-and-comments)
-    - [Profile page](#profile-page-1)
-    - [Popular and trending profiles](#popular-and-trending-profiles)
-    - [Contact form](#contact-form-1)
-    - [Custom error page](#custom-error-page)
-  - [Technology](#technology)
-    - [Languages used](#languages-used)
-    - [Frameworks, libraries and programs used](#frameworks-libraries-and-programs-used)
-  - [Testing](#testing)
-    - [User story testing](#user-story-testing)
-      - [Navigation and authentication](#navigation-and-authentication-1)
-      - [Profile page](#profile-page-2)
-      - [Posts page](#posts-page-1)
-      - [Single post page](#single-post-page-1)
-      - [Adding and liking posts](#adding-and-liking-posts-1)
-      - [Contact form](#contact-form-2)
-    - [Bugs](#bugs)
-    - [Validator testing](#validator-testing)
-      - [CSS validator](#css-validator)
-      - [JavaScript validator](#javascript-validator)
-        - [components](#components)
-        - [contexts](#contexts)
-        - [pages](#pages)
-          - [auth](#auth)
-          - [comments](#comments)
-          - [posts](#posts)
-          - [profiles](#profiles)
-      - [Python validator](#python-validator)
-        - [drf\_postcards](#drf_postcards)
-        - [comment\_likes](#comment_likes)
-        - [comments](#comments-1)
-        - [contact](#contact-1)
-        - [followers](#followers)
-        - [likes](#likes)
-        - [posts](#posts-1)
-        - [profiles](#profiles-1)
-    - [Browser tests](#browser-tests)
-    - [Device/screen size tests](#devicescreen-size-tests)
-    - [Dev Tools Lighthouse tests](#dev-tools-lighthouse-tests)
-  - [Deployment](#deployment)
-  - [Credits](#credits)
-    - [Media](#media)
-    - [Coding resources](#coding-resources)
-      - [General](#general)
-      - [Specific queries](#specific-queries)
-      - [Mentor](#mentor)
-
 ## Design and planning
 
 ### Site owner goals
@@ -397,6 +316,52 @@ Created using [Balsamiq](https://balsamiq.com/)
 | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. | Y | ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
 | As a user, I can see different images on the sign in, sign up and contact forms, so that each form is visually different. | Y | ![Sign up form](/documentation/testing/user_story/navigation/signup.png) ![Sign in form](/documentation/testing/user_story/navigation/signin.png) ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
 
+### Manual testing
+
+| Page | User Actions | Expected Results | Y/N | Comments |
+|---|---|---|---|---|
+| Sign Up | | | | |
+
+
+| Navigation | | | | |
+| 1 | Click on the logo | Home page is displayed | Y | |
+| 2 | Click New postcard | Create post form is displayed | Y | |
+| 3 | Click Home | Home page is displayed | Y | |
+| 4 | Click Feed | Only posts by users user is following are displayed | Y | |
+| 5 | Click Liked | Only posts user has liked are displayed | Y | |
+
+| 6 | Click Sign out | Redirection to logout page | Y | |
+
+| Post| | | | |
+
+| Follow and unfollow | | | | |
+
+| Profile | | | | |
+| 1 | Click on the Edit profile link | Edit profile form is displayed | Y | |
+| 2 | Click on the Change username link | New username form is displayed | Y | |
+| 3 | Click on the Change password link | New password form is displayed | Y | |
+| Edit profile | | | | |
+| 1 | Upload a new image | Profile image is updated | Y | |
+| 2 | Type in new bio | Bio is updated | Y | |
+| 3 | Select location | Location is updated | Y | |
+| 4 | Select favourite country | Favourite country is updated | Y | |
+| 5 | Select travel experience | Travel eperience is updated | Y | |
+| 6 | Only update certain fields | Form is submitted with only certain fields updated | Y | For location and favourite country, the dropdown will show 'Afghanistan' by default but this value will not be saved unless it is selected by the user. |
+| 7 | Click save button | User is redirected to profile page with updated profile | Y | |
+| 8 | Click cancel button | User is redirected to profile page with unchanged profile | Y | |
+| Edit username | | | | |
+| 1 | Type in new username | Username is updated | Y | |
+| 2 | Click save button | User is redirected to profile page with updated username | Y | |
+| 3 | Click cancel button | User is redirected to profile page with unchanged username | Y | |
+| Edit user password | | | | |
+| 1 | Type in valid password twice and click Save | Password is updated | Y | |
+| 2 | Type in an invalid or non-matching passwords | Warning message(s) appears telling user what the issue is | Y | |
+| 3 | Click save button | User is redirected to profile page with updated password | Y | |
+| 4 | Click cancel button | User is redirected to profile page with unchanged password | Y | |
+| Footer | | | | |
+| 1 | Click on the Contact us link | Contact form is displayed | Y | |
+| 2 | Click on the GitHub link | Developer's GitHub page will open in a new tab | Y | |
+
 ### Bugs
 
 | Issue # | Title | Description | Outcome |
@@ -411,7 +376,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 | [#53](https://github.com/mariacjones1/postcards/issues/53) | New user login redirect | First-time users are briefly navigated back to the sign-up page before being redirected to the home page upon logging in. | if statement added to login redirect to send users to the homepage if their previous location was /signup. |
 | [#54](https://github.com/mariacjones1/postcards/issues/54) | User sign out | User is automatically signed back in upon page refresh after signing out | Does not appear to be an issue in the deployed version, only development. No fix needed. |
 
-### Validator testing
+### Validation
 
 #### CSS validator
 
