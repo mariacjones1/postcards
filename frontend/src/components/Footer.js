@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import Nav from 'react-bootstrap/Nav';
 import { NavLink } from 'react-router-dom';
 import styles from "../styles/Footer.module.css";
 
