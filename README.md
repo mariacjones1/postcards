@@ -403,6 +403,14 @@ Created using [Balsamiq](https://balsamiq.com/)
 | 1 | Click on the Contact us link | Contact form is displayed | Y | |
 | 2 | Click on the GitHub link | Developer's GitHub page will open in a new tab | Y | |
 
+### Automated testing
+
+#### JavaScript
+
+Automated tests were run to check the rendering of the navbar and footer:
+[NavBar](/frontend/src/components/__tests__/NavBar.test.js)
+[Footer](/frontend/src/components/__tests__/Footer.test.js)
+
 ### Bugs
 
 | Issue # | Title | Description | Outcome |
