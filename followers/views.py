@@ -5,6 +5,7 @@ from .serializers import FollowerSerializer
 
 
 class FollowerList(generics.ListCreateAPIView):
+    """List user followers or follow a user if logged in"""
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = FollowerSerializer
     queryset = Follower.objects.all()
@@ -14,6 +15,7 @@ class FollowerList(generics.ListCreateAPIView):
 
 
 class FollowerDetail(generics.RetrieveDestroyAPIView):
+    """Retrieve a follower or unfollow a user"""
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = FollowerSerializer
     queryset = Follower.objects.all()

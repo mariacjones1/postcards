@@ -39,6 +39,7 @@ class ProfileList(generics.ListAPIView):
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
+    """Retrieve a specific profile or edit it if the profile owner"""
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.annotate(
@@ -53,12 +54,17 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
 
 
 class GetCountriesView(APIView):
+    """Retrieves the list of countries from django-countries"""
     def get(self, request, *args, **kwargs):
         country_list = [country.name for country in countries]
         return JsonResponse(country_list, safe=False)
 
 
 class GetTravelExperienceChoicesView(View):
+    """
+    Retrieves the list of travel experience choices set in the
+    Profile model
+    """
     def get(self, request, *args, **kwargs):
         choices = [{'value': value, 'display': display}
                    for value, display in Profile.TRAVEL_EXPERIENCE_CHOICES]

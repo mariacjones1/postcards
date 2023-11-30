@@ -6,6 +6,11 @@ from django_countries.serializer_fields import CountryField
 
 
 class ProfileSerializer(CountryFieldMixin, serializers.ModelSerializer):
+    """
+    Serializer for the Profile model
+    Also gets followers count, recent followers count (last 7 days),
+    following count, post count, and display values for travel_experience
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()

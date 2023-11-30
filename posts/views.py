@@ -9,6 +9,13 @@ from drf_postcards.permissions import IsOwnerOrReadOnly
 
 
 class PostList(generics.ListCreateAPIView):
+    """
+    List posts by creation date
+    Allows users to search posts by keyword, or to filter by users they
+    are following, posts they have liked, posts by a certain user or
+    posts with a specific continent selected
+    Perform create allows users to create a new post
+    """
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
@@ -40,6 +47,7 @@ class PostList(generics.ListCreateAPIView):
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    """Retrieve a specific post or edit or delete it if the post owner"""
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
     queryset = Post.objects.annotate(
@@ -49,6 +57,7 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class GetContinentsView(View):
+    """Retrieves the list of continents set in the Post model"""
     def get(self, request, *args, **kwargs):
         choices = [{'value': value, 'display': display}
                    for value, display in Post.CONTINENT_CHOICES]
@@ -56,6 +65,7 @@ class GetContinentsView(View):
 
 
 class GetHolidayTypesView(View):
+    """Retrieves the list of holiday types set in the Post model"""
     def get(self, request, *args, **kwargs):
         choices = [{'value': value, 'display': display}
                    for value, display in Post.HOLIDAY_TYPE_CHOICES]

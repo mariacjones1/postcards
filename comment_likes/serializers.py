@@ -4,6 +4,10 @@ from .models import CommentLike
 
 
 class CommentLikeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Comment Like model
+    Create method ensures no duplicates
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:

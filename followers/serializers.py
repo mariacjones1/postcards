@@ -4,6 +4,7 @@ from .models import Follower
 
 
 class FollowerSerializer(serializers.ModelSerializer):
+    """Serializer for Follower model, gets the name of followed user"""
     owner = serializers.ReadOnlyField(source='owner.username')
     followed_name = serializers.ReadOnlyField(source='followed.username')
 

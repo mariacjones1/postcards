@@ -5,6 +5,7 @@ from comment_likes.models import CommentLike
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """Serializer for Comment model, also gets comment likes"""
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -43,4 +44,5 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class CommentDetailSerializer(CommentSerializer):
+    """Serializer for Comment detail view"""
     post = serializers.ReadOnlyField(source='post.id')
