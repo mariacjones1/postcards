@@ -69,7 +69,7 @@ const ProfileEditForm = () => {
                         travel_experience
                     });
                 } catch (err) {
-                    console.log(err);
+                    // console.log(err);
                     history.push("/");
                 }
             } else {
@@ -82,7 +82,7 @@ const ProfileEditForm = () => {
                 const response = await axiosReq.get('/get_countries/');
                 setCountries(response.data);
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -91,7 +91,7 @@ const ProfileEditForm = () => {
                 const response = await axiosReq.get('/get_travel_experience_choices/');
                 setTravelExperienceChoices(response.data);
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -128,7 +128,7 @@ const ProfileEditForm = () => {
             }));
             history.goBack();
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             setErrors(err.response?.data);
         }
     };

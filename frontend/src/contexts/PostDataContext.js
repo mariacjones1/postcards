@@ -23,7 +23,7 @@ export const PostDataProvider = ({ children }) => {
                 })
             }));
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 
@@ -39,7 +39,7 @@ export const PostDataProvider = ({ children }) => {
                 })
             }));
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
     };
 

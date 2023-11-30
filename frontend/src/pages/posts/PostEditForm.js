@@ -54,7 +54,7 @@ function PostEditForm() {
 
                 is_owner ? setPostData({ title, content, image, continent, holiday_type }) : history.push('/');
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -63,7 +63,7 @@ function PostEditForm() {
                 const response = await axiosReq.get('/get_continents/');
                 setContinents(response.data);
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -72,7 +72,7 @@ function PostEditForm() {
                 const response = await axiosReq.get('/get_holiday_types/');
                 setHolidayTypes(response.data);
             } catch (err) {
-                console.log(err);
+                // console.log(err);
             }
         };
 
@@ -114,7 +114,7 @@ function PostEditForm() {
             await axiosReq.put(`/posts/${id}/`, formData);
             history.push(`/posts/${id}`);
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }
