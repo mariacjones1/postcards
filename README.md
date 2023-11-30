@@ -274,6 +274,8 @@ Created using [Balsamiq](https://balsamiq.com/)
   - For project storage
 - [Codeanywhere](https://app.codeanywhere.com/)
   - IDE
+- [django-countries](https://github.com/SmileyChris/django-countries)
+  - To provide country choices for models
 - [Font Awesome](https://fontawesome.com/)
   - For sourcing text icons
 - [favicon.io](https://favicon.io/)
