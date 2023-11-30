@@ -18,6 +18,13 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
       - [Adding and liking posts](#adding-and-liking-posts)
       - [Contact form](#contact-form)
     - [Models](#models)
+      - [Profile](#profile)
+      - [Post](#post)
+      - [Like](#like)
+      - [Comment](#comment)
+      - [CommentLike](#commentlike)
+      - [Follower](#follower)
+      - [Contact](#contact)
     - [Wireframes](#wireframes)
     - [Design choices](#design-choices)
   - [Features](#features)
@@ -35,15 +42,20 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
     - [Profile page](#profile-page-1)
     - [Popular and trending profiles](#popular-and-trending-profiles)
     - [Contact form](#contact-form-1)
-    - [Custom error pages](#custom-error-pages)
+    - [Custom error page](#custom-error-page)
   - [Technology](#technology)
     - [Languages used](#languages-used)
     - [Frameworks, libraries and programs used](#frameworks-libraries-and-programs-used)
   - [Testing](#testing)
-    - [User story and feature testing](#user-story-and-feature-testing)
+    - [User story testing](#user-story-testing)
+      - [Navigation and authentication](#navigation-and-authentication-1)
+      - [Profile page](#profile-page-2)
+      - [Posts page](#posts-page-1)
+      - [Single post page](#single-post-page-1)
+      - [Adding and liking posts](#adding-and-liking-posts-1)
+      - [Contact form](#contact-form-2)
     - [Bugs](#bugs)
     - [Validator testing](#validator-testing)
-      - [HTML validator](#html-validator)
       - [CSS validator](#css-validator)
       - [JavaScript validator](#javascript-validator)
       - [Python validator](#python-validator)
@@ -78,6 +90,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | [#34](https://github.com/mariacjones1/postcards/issues/34) | Navigation: Conditional rendering (logged-in users) | As a logged-in, I can clearly see the feed, liked and other browsing options, so that I can navigate the site easily. |
 | [#35](https://github.com/mariacjones1/postcards/issues/35) | Log out | As a logged-in user, I can log out of the site, so that I can protect my privacy and keep my account secure when I am not using it. |
 | [#40](https://github.com/mariacjones1/postcards/issues/40) | User redirects | As a user, I can only access pages relevant to my logged-in/logged-out status, so that my user experience is not compromised by allowing me to access irrelevant pages. |
+| [#50](https://github.com/mariacjones1/postcards/issues/50) | Error pages | As a user, I can view custom error pages when there is a page error, so that I can easily tell I am still on the website and can get back to a page I want to be on. |
 
 #### Profile page
 
@@ -132,6 +145,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#32](https://github.com/mariacjones1/postcards/issues/32) | Contact form | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. |
+| [#41](https://github.com/mariacjones1/postcards/issues/41) | Form images | As a user, I can see different images on the sign in, sign up and contact forms, so that each form is visually different. |
 
 ### Models
 
@@ -245,7 +259,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ### Contact form
 
-### Custom error pages
+### Custom error page
 
 ## Technology
 
@@ -311,6 +325,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 | As a logged-in, I can clearly see the feed, liked and other browsing options, so that I can navigate the site easily. | Y | ![Navbar](/documentation/testing/user_story/navigation/logged-in.png) |
 | As a logged-in user, I can log out of the site, so that I can protect my privacy and keep my account secure when I am not using it. | Y | ![Sign out link](/documentation/testing/user_story/navigation/sign-out.png) |
 | As a user, I can only access pages relevant to my logged-in/logged-out status, so that my user experience is not compromised by allowing me to access irrelevant pages. | Y | N/A |
+| As a user, I can view custom error pages when there is a page error, so that I can easily tell I am still on the website and can get back to a page I want to be on. | Y | ![Not found](/documentation/testing/user_story/navigation/not-found.png) |
 
 #### Profile page
 
@@ -365,6 +380,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 | User story | Requirement met? | Screenshot |
 | --- | --- | --- |
 | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. | Y | ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
+| As a user, I can see different images on the sign in, sign up and contact forms, so that each form is visually different. | Y | ![Sign up form](/documentation/testing/user_story/navigation/signup.png) ![Sign in form](/documentation/testing/user_story/navigation/signin.png) ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
 
 ### Bugs
 
@@ -382,19 +398,68 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ### Validator testing
 
-#### HTML validator
-
-[W3C](https://validator.w3.org/)
-
-| File | Results |
-| --- | --- |
-
 #### CSS validator
 
-[W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator)
+[W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
 
-| File | Results |
-| --- | --- |
+All files passed with no warnings.
+
+<details>
+
+<summary>Screenshots</summary>
+
+App.module.css
+![App.module.css](/documentation/testing/validation/css/App.png)
+
+Asset.module.css
+![Asset.module.css](/documentation/testing/validation/css/Asset.png)
+
+Avatar.module.css
+![Avatar.module.css](/documentation/testing/validation/css/Avatar.png)
+
+Button.module.css
+![Button.module.css](/documentation/testing/validation/css/Button.png)
+
+Comment.module.css
+![Comment.module.css](/documentation/testing/validation/css/Comment.png)
+
+CommentCreateEditForm.module.css
+![CommentCreateEditForm.module.css](/documentation/testing/validation/css/CommentCreateEditForm.png)
+
+Footer.module.css
+![Footer.module.css](/documentation/testing/validation/css/Footer.png)
+
+MoreDropdown.module.css
+![MoreDropdown.module.css](/documentation/testing/validation/css/MoreDropdown.png)
+
+NavBar.module.css
+![NavBar.module.css](/documentation/testing/validation/css/NavBar.png)
+
+NotFound.module.css
+![NotFound.module.css](/documentation/testing/validation/css/NotFound.png)
+
+Post.module.css
+![Post.module.css](/documentation/testing/validation/css/Post.png)
+
+PostCreateEditForm.module.css
+![PostCreateEditForm.module.css](/documentation/testing/validation/css/PostCreateEditForm.png)
+
+PostsPage.module.css
+![PostsPage.module.css](/documentation/testing/validation/css/PostsPage.png)
+
+Profile.module.css
+![Profile.module.css](/documentation/testing/validation/css/Profile.png)
+
+ProfileEditForm.module.css
+![ProfileEditForm.module.css](/documentation/testing/validation/css/ProfileEditForm.png)
+
+ProfilePage.module.css
+![ProfilePage.module.css](/documentation/testing/validation/css/ProfilePage.png)
+
+SignInUpForm.module.css
+![SignInUpForm.module.css](/documentation/testing/validation/css/SignInUpForm.png)
+
+</details>
 
 #### JavaScript validator
 
