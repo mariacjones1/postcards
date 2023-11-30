@@ -320,33 +320,74 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 | Page | User Actions | Expected Results | Y/N | Comments |
 |---|---|---|---|---|
-| Sign Up | | | | |
-
-
 | Navigation | | | | |
 | 1 | Click on the logo | Home page is displayed | Y | |
 | 2 | Click New postcard | Create post form is displayed | Y | |
 | 3 | Click Home | Home page is displayed | Y | |
 | 4 | Click Feed | Only posts by users user is following are displayed | Y | |
 | 5 | Click Liked | Only posts user has liked are displayed | Y | |
-
-| 6 | Click Sign out | Redirection to logout page | Y | |
-
-| Post| | | | |
-
+| 6 | Click Continents | Dropdown list of continents is displayed | Y | |
+| 7 | Click a specific continent from dropdown | Posts filtered by that continent are displayed | Y | |
+| 8 | Click Sign out | User is signed out and redirected to home page | Y | |
+| Sign Up | | | | |
+| 1 | Enter username | Username is set | Y | |
+| 2 | Enter password | Password is set | Y | |
+| 3 | Enter confirm password | Confirm password is set | Y | |
+| 4 | Click sign up with all valid inputs | User account is created and user is redirected to sign in page | Y | |
+| 5 | Click sign up with invalid inputs | User account is not created and error messages are displayed telling user what the issue is | Y | |
+| 6 | Click sign in link | User is redirected to sign in page | Y | |
+| Sign In | | | | |
+| 1 | Enter username | Username is set | Y | |
+| 2 | Enter password | Password is set | Y | |
+| 4 | Click sign in with existing data | User is signed in and directed to either the last page they were on or the home page | Y | |
+| 5 | Click sign in with non-existant user data | Error message is displayed telling the user they are unable to log in with provided credentials | Y | |
+| 6 | Click sign up link | User is redirected to sign up page | Y | |
+| Create post | | | | |
+| 1 | Upload image | Image is set | Y | |
+| 2 | Type in title | Title is set | Y | |
+| 3 | Type in content | Content is set | Y | |
+| 4 | Select continent | Continent is set | Y | |
+| 5 | Select holiday type | Holiday type is set | Y | |
+| 7 | Click create button | User is redirected to post page with updated post | Y | |
+| 8 | Click cancel button | User is redirected to the last page they were on | Y | |
+| Post | | | | |
+| 1 | Click on the Edit button | Edit post form is displayed | Y | |
+| 2 | Click on the Delete button | Post is deleted | Y | |
+| 3 | Click the heart icon as a logged-in user | Like is added to the post and the heart turns solid pink | Y | |
+| 4 | Click the heart icon as a logged-out user | Message displays saying you must log in to like posts | Y | |
+| 5 | Click the heart icon as the post owner | Message displays saying you can't like your own post | Y | |
+| 6 | Type a new comment and click post | New comment appears below post and comment count increases by one | Y | |
+| Edit post | | | | |
+| 1 | Upload a new image | Image is updated | Y | |
+| 2 | Type in new title | Title is updated | Y | |
+| 3 | Type in new content | Content is updated | Y | |
+| 4 | Select continent | Continent is updated | Y | |
+| 5 | Select holiday type | Holiday type is updated | Y | |
+| 6 | Only update certain fields | Form is submitted with only certain fields updated | Y | Continent and holiday type are set to sefault values unless otherwise selected. |
+| 7 | Click save button | User is redirected to post page with updated post | Y | |
+| 8 | Click cancel button | User is redirected to post page with unchanged post | Y | |
+| Delete post | | | | |
+| 1 | Click delete button | Post is deleted and user is redirected to the home page | Y | |
+| Comment | | | | |
+| 1 | Click on the Edit button | Edit comment form is displayed | Y | |
+| 2 | Click on the Delete button | Comment is deleted and comment count decreases by one | Y | |
+| 3 | Click the heart icon as a logged-in user | Like is added to the comment and the heart turns solid pink | Y | |
+| 4 | Click the heart icon as a logged-out user | Message displays saying you must log in to like comments | Y | |
+| 5 | Click the heart icon as the comment owner | Message displays saying you can't like your own comment | Y | |
 | Follow and unfollow | | | | |
-
+| 1 | Click on the follow button | Button displays unfollow and following count increases by 1 | Y | |
+| 2 | Click on the unfollow button | Button displays follow and following count decreases by 1 | Y | |
 | Profile | | | | |
-| 1 | Click on the Edit profile link | Edit profile form is displayed | Y | |
-| 2 | Click on the Change username link | New username form is displayed | Y | |
-| 3 | Click on the Change password link | New password form is displayed | Y | |
+| 1 | Click on the Edit profile button | Edit profile form is displayed | Y | |
+| 2 | Click on the Change username button | New username form is displayed | Y | |
+| 3 | Click on the Change password button | New password form is displayed | Y | |
 | Edit profile | | | | |
 | 1 | Upload a new image | Profile image is updated | Y | |
 | 2 | Type in new bio | Bio is updated | Y | |
 | 3 | Select location | Location is updated | Y | |
 | 4 | Select favourite country | Favourite country is updated | Y | |
 | 5 | Select travel experience | Travel eperience is updated | Y | |
-| 6 | Only update certain fields | Form is submitted with only certain fields updated | Y | For location and favourite country, the dropdown will show 'Afghanistan' by default but this value will not be saved unless it is selected by the user. |
+| 6 | Only update certain fields | Form is submitted with only certain fields updated | Y | For location and favourite country, the dropdown will show 'Afghanistan' by default but this value will not be saved unless it is selected by the user. Travel experience is set to a default value if not otherwise selected. |
 | 7 | Click save button | User is redirected to profile page with updated profile | Y | |
 | 8 | Click cancel button | User is redirected to profile page with unchanged profile | Y | |
 | Edit username | | | | |
@@ -355,7 +396,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 | 3 | Click cancel button | User is redirected to profile page with unchanged username | Y | |
 | Edit user password | | | | |
 | 1 | Type in valid password twice and click Save | Password is updated | Y | |
-| 2 | Type in an invalid or non-matching passwords | Warning message(s) appears telling user what the issue is | Y | |
+| 2 | Type in an invalid or non-matching passwords | Error messages are displayed telling user what the issue is | Y | |
 | 3 | Click save button | User is redirected to profile page with updated password | Y | |
 | 4 | Click cancel button | User is redirected to profile page with unchanged password | Y | |
 | Footer | | | | |
