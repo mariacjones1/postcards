@@ -133,11 +133,81 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | --- | --- | --- |
 | [#32](https://github.com/mariacjones1/postcards/issues/32) | Contact form | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. |
 
-### Models diagram
+### Models
 
 Created using [dbdiagram.io](https://dbdiagram.io/)
 
 ![Models diagram](/documentation/planning/model-diagram.png)
+
+#### Profile
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| owner | OneToOneField | User, on_delete=models.CASCADE |
+| created_at | DateTimeField | auto_now_add=True |
+| updated_at | DateTimeField | auto_now=True |
+| name | CharField | max_length=255, blank=True |
+| content | TextField | blank=True |
+| image | ImageField | upload_to='images/', default='../default_profile_xecywf' |
+| location | CountryField | blank=True |
+| favourite_country | CountryField | blank=True |
+| travel_experience | CharField | max_length=20, choices=TRAVEL_EXPERIENCE_CHOICES, default="newbie" |
+
+#### Post
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| owner | ForeignKey | User, on_delete=models.CASCADE |
+| created_at | DateTimeField | auto_now_add=True |
+| updated_at | DateTimeField | auto_now=True |
+| title | CharField | max_length=255 |
+| content | TextField | blank=True |
+| image | ImageField | blank=True |
+| continent | CharField | max_length=2, choices=CONTINENT_CHOICES, default="EU" |
+| holiday_type | CharField | max_length=10, choices=HOLIDAY_TYPE_CHOICES, default="solo", blank=True |
+
+#### Like
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| owner | ForeignKey | User, on_delete=models.CASCADE |
+| post | ForeignKey | Post, on_delete=models.CASCADE, related_name='likes' |
+| created_at | DateTimeField | auto_now_add=True |
+
+#### Comment
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| owner | ForeignKey | User, on_delete=models.CASCADE |
+| post | ForeignKey | Post, on_delete=models.CASCADE |
+| created_at | DateTimeField | auto_now_add=True |
+| updated_at | DateTimeField | auto_now=True |
+| content | TextField | - |
+
+#### CommentLike
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| owner | ForeignKey | User, on_delete=models.CASCADE |
+| post | ForeignKey | Comment, on_delete=models.CASCADE, related_name='comment_likes' |
+| created_at | DateTimeField | auto_now_add=True |
+
+#### Follower
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| owner | ForeignKey | User, on_delete=models.CASCADE, related_name='following' |
+| followed | ForeignKey | User, on_delete=models.CASCADE, related_name='followed' |
+| created_at | DateTimeField | auto_now_add=True |
+
+#### Contact
+
+| Name | Field type | Validation |
+| --- | --- | --- |
+| name | CharField | max_length=225 |
+| email | EmailField | - |
+| message | TextField | - |
+| created_at | DateTimeField | auto_now_add=True |
 
 ### Wireframes
 
