@@ -58,7 +58,22 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
     - [Validator testing](#validator-testing)
       - [CSS validator](#css-validator)
       - [JavaScript validator](#javascript-validator)
+        - [components](#components)
+        - [contexts](#contexts)
+        - [pages](#pages)
+          - [auth](#auth)
+          - [comments](#comments)
+          - [posts](#posts)
+          - [profiles](#profiles)
       - [Python validator](#python-validator)
+        - [drf\_postcards](#drf_postcards)
+        - [comment\_likes](#comment_likes)
+        - [comments](#comments-1)
+        - [contact](#contact-1)
+        - [followers](#followers)
+        - [likes](#likes)
+        - [posts](#posts-1)
+        - [profiles](#profiles-1)
     - [Browser tests](#browser-tests)
     - [Device/screen size tests](#devicescreen-size-tests)
     - [Dev Tools Lighthouse tests](#dev-tools-lighthouse-tests)
@@ -516,8 +531,37 @@ index.js
 
 [PEP8](https://pep8ci.herokuapp.com/)
 
-| File | Results |
-| --- | --- |
+##### drf_postcards
+
+[drf_postcards validation](/documentation/testing/validation/python/drf_postcards.pdf)
+
+##### comment_likes
+
+[comment_likes validation](/documentation/testing/validation/python/comment_likes.pdf)
+
+##### comments
+
+[comments validation](/documentation/testing/validation/python/comments.pdf)
+
+##### contact
+
+[contact validation](/documentation/testing/validation/python/contact.pdf)
+
+##### followers
+
+[followers validation](/documentation/testing/validation/python/followers.pdf)
+
+##### likes
+
+[likes validation](/documentation/testing/validation/python/likes.pdf)
+
+##### posts
+
+[posts validation](/documentation/testing/validation/python/posts.pdf)
+
+##### profiles
+
+[profiles validation](/documentation/testing/validation/python/profiles.pdf)
 
 ### Browser tests
 
