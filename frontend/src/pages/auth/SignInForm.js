@@ -25,7 +25,7 @@ function SignInForm() {
 
     const [signInData, setSignInData] = useState({
         username: '',
-        password: '',
+        password: ''
     });
     const { username, password } = signInData;
     const [errors, setErrors] = useState({});
@@ -34,7 +34,7 @@ function SignInForm() {
     const handleChange = (event) => {
         setSignInData({
             ...signInData,
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         });
     };
 
@@ -50,7 +50,6 @@ function SignInForm() {
             } else {
                 history.push("/");
             }
-
         } catch (err) {
             setErrors(err.response?.data);
         }

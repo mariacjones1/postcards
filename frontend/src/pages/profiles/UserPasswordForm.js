@@ -21,7 +21,7 @@ const UserPasswordForm = () => {
 
     const [userData, setUserData] = useState({
         new_password1: "",
-        new_password2: "",
+        new_password2: ""
     });
     const { new_password1, new_password2 } = userData;
 
@@ -30,7 +30,7 @@ const UserPasswordForm = () => {
     const handleChange = (event) => {
         setUserData({
             ...userData,
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         });
     };
 

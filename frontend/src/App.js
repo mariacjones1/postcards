@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import Container from 'react-bootstrap/Container';
@@ -15,7 +16,6 @@ import Footer from './components/Footer';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from './pages/posts/PostPage';
 import { useCurrentUser } from "./contexts/CurrentUserContext";
-import { useState } from "react";
 import PostEditForm from './pages/posts/PostEditForm';
 import NotFound from './components/NotFound';
 

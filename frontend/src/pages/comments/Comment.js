@@ -23,7 +23,7 @@ const Comment = (props) => {
         comment_like_id,
         id,
         setPost,
-        setComments,
+        setComments
     } = props;
 
     const [showEditForm, setShowEditForm] = useState(false);
@@ -43,7 +43,7 @@ const Comment = (props) => {
 
             setComments(prevComments => ({
                 prevComments,
-                results: prevComments.results.filter((comment) => comment.id !== id),
+                results: prevComments.results.filter((comment) => comment.id !== id)
             }));
         } catch (err) {
             // console.log(err);
@@ -59,7 +59,7 @@ const Comment = (props) => {
                     return comment.id === id
                         ? { ...comment, comment_likes_count: comment.comment_likes_count + 1, comment_like_id: data.id }
                         : comment;
-                }),
+                })
             }));
         } catch (err) {
             // console.log(err);
@@ -75,7 +75,7 @@ const Comment = (props) => {
                     return comment.id === id
                         ? { ...comment, comment_likes_count: comment.comment_likes_count - 1, comment_like_id: null }
                         : comment;
-                }),
+                })
             }));
         } catch (err) {
             // console.log(err);

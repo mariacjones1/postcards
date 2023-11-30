@@ -19,7 +19,7 @@ function CommentEditForm(props) {
         event.preventDefault();
         try {
             await axiosRes.put(`/comments/${id}/`, {
-                content: formContent.trim(),
+                content: formContent.trim()
             });
             setComments((prevComments) => ({
                 ...prevComments,
@@ -28,10 +28,10 @@ function CommentEditForm(props) {
                         ? {
                             ...comment,
                             content: formContent.trim(),
-                            updated_at: "now",
+                            updated_at: "now"
                         }
                         : comment;
-                }),
+                })
             }));
             setShowEditForm(false);
         } catch (err) {

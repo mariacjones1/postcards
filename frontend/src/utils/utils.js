@@ -11,7 +11,7 @@ export const fetchMoreData = async (resource, setResource) => {
                 return acc.some((accResult) => accResult.id === cur.id)
                     ? acc
                     : [...acc, cur];
-            }, prevResource.results),
+            }, prevResource.results)
         }));
     } catch (err) { }
 };
@@ -22,7 +22,7 @@ export const followHelper = (profile, clickedProfile, following_id) => {
             ...profile,
             followers_count: profile.followers_count + 1,
             recent_followers_count: profile.recent_followers_count + 1,
-            following_id,
+            following_id
         }
         : profile.is_owner
             ? {
@@ -37,7 +37,7 @@ export const unfollowHelper = (profile, clickedProfile) => {
         ? {
             ...profile,
             followers_count: profile.followers_count - 1,
-            following_id: null,
+            following_id: null
         }
         : profile.is_owner
             ? {

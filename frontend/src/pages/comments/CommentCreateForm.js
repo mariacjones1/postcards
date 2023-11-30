@@ -22,19 +22,19 @@ function CommentCreateForm(props) {
         try {
             const { data } = await axiosRes.post("/comments/", {
                 content,
-                post,
+                post
             });
             setComments((prevComments) => ({
                 ...prevComments,
-                results: [data, ...prevComments.results],
+                results: [data, ...prevComments.results]
             }));
             setPost((prevPost) => ({
                 results: [
                     {
                         ...prevPost.results[0],
-                        comments_count: prevPost.results[0].comments_count + 1,
-                    },
-                ],
+                        comments_count: prevPost.results[0].comments_count + 1
+                    }
+                ]
             }));
             setContent("");
         } catch (err) {

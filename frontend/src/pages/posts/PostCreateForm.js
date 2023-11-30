@@ -26,7 +26,7 @@ function PostCreateForm() {
         content: "",
         image: "",
         continent: "EU",
-        holiday_type: "solo",
+        holiday_type: "solo"
     });
     const {
         title,
@@ -70,7 +70,7 @@ function PostCreateForm() {
     const handleChange = (event) => {
         setPostData((prevData) => ({
             ...prevData,
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         }));
     };
 
@@ -79,7 +79,7 @@ function PostCreateForm() {
             URL.revokeObjectURL(image);
             setPostData({
                 ...postData,
-                image: URL.createObjectURL(event.target.files[0]),
+                image: URL.createObjectURL(event.target.files[0])
             });
         }
     };

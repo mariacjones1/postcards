@@ -12,7 +12,7 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import {
     useCurrentUser,
-    useSetCurrentUser,
+    useSetCurrentUser
 } from "../../contexts/CurrentUserContext";
 
 import styles from "../../styles/ProfileEditForm.module.css";
@@ -32,7 +32,7 @@ const ProfileEditForm = () => {
         image: "",
         location: "",
         favourite_country: "",
-        travel_experience: "",
+        travel_experience: ""
     });
     const {
         name,
@@ -59,7 +59,8 @@ const ProfileEditForm = () => {
                         image,
                         location,
                         favourite_country,
-                        travel_experience } = data;
+                        travel_experience
+                    } = data;
                     setProfileData({
                         name,
                         content,
@@ -103,7 +104,7 @@ const ProfileEditForm = () => {
     const handleChange = (event) => {
         setProfileData({
             ...profileData,
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         });
     };
 
@@ -124,7 +125,7 @@ const ProfileEditForm = () => {
             const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
             setCurrentUser((currentUser) => ({
                 ...currentUser,
-                profile_image: data.image,
+                profile_image: data.image
             }));
             history.goBack();
         } catch (err) {
@@ -242,7 +243,7 @@ const ProfileEditForm = () => {
                                     if (e.target.files.length) {
                                         setProfileData({
                                             ...profileData,
-                                            image: URL.createObjectURL(e.target.files[0]),
+                                            image: URL.createObjectURL(e.target.files[0])
                                         });
                                     }
                                 }}

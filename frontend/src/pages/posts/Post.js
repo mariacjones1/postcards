@@ -30,7 +30,7 @@ const Post = (props) => {
         holiday_type_display,
         updated_at,
         postPage,
-        setPosts,
+        setPosts
     } = props;
 
     const currentUser = useCurrentUser();

@@ -11,7 +11,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import {
     useCurrentUser,
-    useSetCurrentUser,
+    useSetCurrentUser
 } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
@@ -39,11 +39,11 @@ const UsernameForm = () => {
         event.preventDefault();
         try {
             await axiosRes.put("/dj-rest-auth/user/", {
-                username,
+                username
             });
             setCurrentUser((prevUser) => ({
                 ...prevUser,
-                username,
+                username
             }));
             history.goBack();
         } catch (err) {

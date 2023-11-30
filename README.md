@@ -463,10 +463,54 @@ SignInUpForm.module.css
 
 #### JavaScript validator
 
-[JSHint](https://jshint.com/)
+[ESLint](https://eslint.org/)
 
-| File | Results |
-| --- | --- |
+ESLint was installed using the following command:
+npm init @eslint/config
+
+No warnings were returned. Errors were found in some files as per the screenshots below. All other files returned with no errors.
+The following rules were ignored:
+![ignored](/documentation/testing/validation/js/ignored.png)
+
+<details>
+
+<summary>Screenshots</summary>
+
+App.js
+![App.js validation](/documentation/testing/validation/js/app.png)
+
+index.js
+![index.js validation](/documentation/testing/validation/js/index.png)
+
+##### components
+
+![components folder validation](/documentation/testing/validation/js/components-1.png)
+![components folder validation](/documentation/testing/validation/js/components-2.png)
+
+##### contexts
+
+![contexts folder validation](/documentation/testing/validation/js/contexts.png)
+
+##### pages
+
+###### auth
+
+![auth folder validation](/documentation/testing/validation/js/pages-auth.png)
+
+###### comments
+
+![comments folder validation](/documentation/testing/validation/js/pages-comments.png)
+
+###### posts
+
+![posts folder validation](/documentation/testing/validation/js/pages-posts-1.png)
+![posts folder validation](/documentation/testing/validation/js/pages-posts-2.png)
+
+###### profiles
+
+![profiles folder validation](/documentation/testing/validation/js/pages-profiles.png)
+
+</details>
 
 #### Python validator
 

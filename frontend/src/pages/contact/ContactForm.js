@@ -17,7 +17,7 @@ const ContactForm = () => {
     const [contactData, setContactData] = useState({
         name: '',
         email: '',
-        message: '',
+        message: ''
     });
     const { name, email, message } = contactData;
     const [errors, setErrors] = useState({});
@@ -26,7 +26,7 @@ const ContactForm = () => {
     const handleChange = (event) => {
         setContactData({
             ...contactData,
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         });
     };
 

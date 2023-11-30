@@ -23,7 +23,7 @@ const Post = (props) => {
         image,
         updated_at,
         postPage,
-        setPosts,
+        setPosts
     } = props;
 
     const currentUser = useCurrentUser();

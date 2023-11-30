@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { axiosReq, axiosRes } from '../api/axiosDefaults';
 import { followHelper, unfollowHelper } from '../utils/utils';
 import { useCurrentUser } from './CurrentUserContext';
@@ -20,7 +20,7 @@ export const ProfileDataProvider = ({ children }) => {
     const handleFollow = async (clickedProfile) => {
         try {
             const { data } = await axiosRes.post('/followers/', {
-                followed: clickedProfile.id,
+                followed: clickedProfile.id
             });
 
             setProfileData(prevState => ({
@@ -80,7 +80,7 @@ export const ProfileDataProvider = ({ children }) => {
                 setProfileData((prevState) => ({
                     ...prevState,
                     popularProfiles: popular,
-                    trendingProfiles: trending,
+                    trendingProfiles: trending
                 }));
             } catch (err) {
                 // console.log(err);
