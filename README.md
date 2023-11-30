@@ -17,7 +17,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
       - [Single post page](#single-post-page)
       - [Adding and liking posts](#adding-and-liking-posts)
       - [Contact form](#contact-form)
-    - [Models diagram](#models-diagram)
+    - [Models](#models)
     - [Wireframes](#wireframes)
     - [Design choices](#design-choices)
   - [Features](#features)
@@ -69,7 +69,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | Issue # | Title | User story |
 | --- | --- | --- |
 | [#1](https://github.com/mariacjones1/postcards/issues/1) | Navigation | As a user, I can view the same navbar on each page, so that I can easily navigate between pages. |
-| [#2](https://github.com/mariacjones1/postcards/issues/2) | Routing | As a user, I can view the same navbar on each page, so that I can easily navigate between pages. |
+| [#2](https://github.com/mariacjones1/postcards/issues/2) | Routing | As a user, I can quickly navigate through different pages, so that I can view content seamlessly without the page needing to refresh. |
 | [#3](https://github.com/mariacjones1/postcards/issues/3) | Authentication - Sign up | As a user, I can create my own account, so that I can access all the additional features for registered users. |
 | [#4](https://github.com/mariacjones1/postcards/issues/4) | Authentication - Sign in | As a user, I can sign into the app, so that I can access additional functionality for logged-in users. |
 | [#5](https://github.com/mariacjones1/postcards/issues/5) | Authentication - Logged in status | As a user, I can easily tell if I'm logged in or not, so that I know if I need to log in again to access additional functionality. |
@@ -295,7 +295,76 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ## Testing
 
-### User story and feature testing
+### User story testing
+
+#### Navigation and authentication
+
+| User story | Requirement met? | Screenshot |
+| --- | --- | --- |
+| As a user, I can view the same navbar on each page, so that I can easily navigate between pages. | Y | ![Navbar - homepage](/documentation/testing/user_story/navigation/navigation-1.png) ![Navbar - liked](/documentation/testing/user_story/navigation/navigation-12.png) ![Navbar - create post](/documentation/testing/user_story/navigation/navigation-13.png) |
+| As a user, I can quickly navigate through different pages, so that I can view content seamlessly without the page needing to refresh. | Y | N/A |
+| As a user, I can create my own account, so that I can access all the additional features for registered users. | Y | ![Sign up page](/documentation/testing/user_story/navigation/signup.png) |
+| As a user, I can sign into the app, so that I can access additional functionality for logged-in users. | Y | ![Sign in page](/documentation/testing/user_story/navigation/signin.png) |
+| As a user, I can easily tell if I'm logged in or not, so that I know if I need to log in again to access additional functionality. | Y | ![Navbar logged in](/documentation/testing/user_story/navigation/logged-in.png) ![Navbar logged out](/documentation/testing/user_story/navigation/logged-out.png) |
+| As a user, I can maintain my logged-in status, so that my user experience is not compromised. | Y | N/A |
+| As a logged-out user, I can clearly see sign in and sign up options, so that I can sign in/sign up as applicable. | Y | ![Sign in and sign up links](/documentation/testing/user_story/navigation/sign-in-up.png) |
+| As a logged-in, I can clearly see the feed, liked and other browsing options, so that I can navigate the site easily. | Y | ![Navbar](/documentation/testing/user_story/navigation/logged-in.png) |
+| As a logged-in user, I can log out of the site, so that I can protect my privacy and keep my account secure when I am not using it. | Y | ![Sign out link](/documentation/testing/user_story/navigation/sign-out.png) |
+| As a user, I can only access pages relevant to my logged-in/logged-out status, so that my user experience is not compromised by allowing me to access irrelevant pages. | Y | N/A |
+
+#### Profile page
+
+| User story | Requirement met? | Screenshot |
+| --- | --- | --- |
+| As a user, I can view other users' profile pictures, so that I can easily identify them. | Y | ![Profiles](/documentation/testing/user_story/profile/profile-pictures.png) |
+| As a user, I can view other users' profiles, so that I can see their posts and any information they have shared about themselves. | Y | ![Profile page](/documentation/testing/user_story/profile/profile-page.png) |
+| As a user, I can see a list of profiles with the most followers, so that I can see which profiles are popular. | Y | ![Popular profiles](/documentation/testing/user_story/profile/popular-profiles.png) |
+| As a user, I can see a list of the profiles which have been followed the most in the last week, so that I can see which profiles are becoming more popular. | Y | ![Trending profiles](/documentation/testing/user_story/profile/trending-profiles.png) |
+| As a user, I can view statistics about another user by going on their profile (bio, number of posts, followers and users followed), so that I can learn more about them. | Y | ![User stats](/documentation/testing/user_story/profile/user-stats.png) |
+| As a logged-in user, I can follow and unfollow other users, so that I can curate my feed to contain only posts by users whose content I like. | Y | ![Follow unfollw button](/documentation/testing/user_story/profile/follow-unfollow.png) |
+| As a logged-in user, I can edit my profile, so that I can change my profile picture and update my bio at any time. | Y | ![Edit profile button](/documentation/testing/user_story/profile/edit-profile-button.png) ![Edit profile form](/documentation/testing/user_story/profile/edit-profile-form.png) |
+| As a logged-in user, I can change my username and/or password, so that I can change my display name and keep my profile secure. | Y | ![Change username button](/documentation/testing/user_story/profile/change-username-button.png) ![Change username form](/documentation/testing/user_story/profile/change-username-form.png) |
+| As a user, I can view users' posts on their profile page, so that I can see all the posts by that user. | Y | ![Change password button](/documentation/testing/user_story/profile/change-password-button.png) ![Change password form](/documentation/testing/user_story/profile/change-password-form.png) |
+
+#### Posts page
+
+| User story | Requirement met? | Screenshot |
+| --- | --- | --- |
+| As a user, I can view the most recent posts by all users, ordered by most recently created first, so that I am up to date with the newest content. | Y | ![Home page](/documentation/testing/user_story/posts/recent-posts.png) |
+| As a user, I can use keywords to search for posts, so that I can find the posts and user profiles I am most interested in. | Y | ![Search posts](/documentation/testing/user_story/posts/search-posts.png) |
+| View liked posts | As a logged-in user, I can view the posts I have previously liked, so that I can easily find posts I have enjoyed the most. | Y | ![Liked posts](/documentation/testing/user_story/posts/liked-posts.png) |
+| Browse posts by continent | As a user, I can browse posts by continent, so that I can find posts relating to a particular continent that I am interested in. | Y | ![Browse by continent](/documentation/testing/user_story/posts/browse-by-continent.png) |
+| View posts of followed users | As a logged-in user, I can view content filtered by only the users I follow, so that I can keep up to date with what they are posting about. | Y | ![Feed posts](/documentation/testing/user_story/posts/feed-posts.png) |
+| Infinite scroll | As a user, I can keep scrolling through the posts as they are automatically loaded on the site, so that I don't have to click on "next page" etc. | Y | N/A |
+
+#### Single post page
+
+| User story | Requirement met? | Screenshot |
+| --- | --- | --- |
+| As a user, I can view the page of a selected post, so that I can read the caption and view the comments on it. | Y | ![Post page](/documentation/testing/user_story/posts/post-page.png) |
+| As a post owner, I can edit the title, image and content of any of my posts, so that I can make corrections or update my post after it was created. | Y | ![Edit post button](/documentation/testing/user_story/posts/edit-post-button.png) ![Edit post form](/documentation/testing/user_story/posts/edit-post-form.png) |
+| As a logged-in user, I can add comments to any post, so that I can share my thoughts about it. | Y | ![Comment form](/documentation/testing/user_story/posts/comment-form.png) |
+| As a user, I can see the date a comment was posted, so that I know how old it is. | Y | ![Comment view](/documentation/testing/user_story/posts/comment-view.png) |
+| As an owner of a comment, I can delete my own comment, so that I can control removal of all my own comments from the application. | Y | ![Comment delete button](/documentation/testing/user_story/posts/comment-edit-delete.png) |
+| As an owner of a comment, I can edit my own comment, so that I can fix or update it if I want to. | Y | ![Comment edit button](/documentation/testing/user_story/posts/comment-edit-delete.png) ![Comment edit form](/documentation/testing/user_story/posts/comment-edit-form.png) |
+| As a logged-in user, I can like other users' comments, so that I can show my support for comments I agree with. | Y | ![Comment like](/documentation/testing/user_story/posts/comment-like.png) |
+| As a user, I can keep scrolling through comments as they are automatically loaded on the post page, so that I don't have to click “next” etc. | Y | N/A |
+| As a user, I can view comments under a selected post, so that I can see other people's thoughts and interact with them. | Y | ![Comment view](/documentation/testing/user_story/posts/comment-view.png) |
+
+#### Adding and liking posts
+
+| User story | Requirement met? | Screenshot |
+| --- | --- | --- |
+| As a logged-in user, I can create my own posts, so that I can share my them with other users. | Y | ![Create post](/documentation/testing/user_story/posts/create-post.png) |
+| View a post | As a user, I can can view the details of a single post by clicking on it, so that I can learn more about it. | Y | ![Post page](/documentation/testing/user_story/posts/post-page.png) |
+| Like a post | As a logged-in user, I can like another user's post, so that I can show my support for the posts that interest me. | Y | ![Like post](/documentation/testing/user_story/posts/like-post.png) |
+| Delete post | As a post owner, I can delete any of my posts, so that I can remove any posts I no longer want people to see. | Y | ![Delete post button](/documentation/testing/user_story/posts/delete-post.png) |
+
+#### Contact form
+
+| User story | Requirement met? | Screenshot |
+| --- | --- | --- |
+| As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. | Y | ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
 
 ### Bugs
 
