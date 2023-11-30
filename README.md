@@ -299,7 +299,17 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ### Bugs
 
-| [#42](https://github.com/mariacjones1/postcards/issues/42) | Navbar dropdown toggle |
+| Issue # | Title | Description | Outcome |
+| --- | --- | --- | --- |
+| [#36](https://github.com/mariacjones1/postcards/issues/36) | Navbar toggle | On smaller screens, navbar collapses when clicking on either the icon or the dropdown arrow for continents. Only clicking on the word 'Continents' itself shows the expanded list. | Dropdown is set as an unordered list on smaller screens, rather than a nested dropdown. |
+| [#38](https://github.com/mariacjones1/postcards/issues/38) | Compress logo | Site load is slow due to logo. Replace logo with compressed version to increase site load speed. | Logo replaced with compressed version. Site load is quicker. |
+| [#42](https://github.com/mariacjones1/postcards/issues/42) | Navbar dropdown toggle | Navbar does not close when selecting a continent from Continents dropdown. | Each dropdown NavLink is nested within a Dropdown.Item, fixing the issue. |
+| [#43](https://github.com/mariacjones1/postcards/issues/43) | Footer | The footer should be at the bottom of the screen and not overlap any content. | Background colour set on footer so there is no overlap with content behind. Height also reduced so it takes up less space on the screen. |
+| [#46](https://github.com/mariacjones1/postcards/issues/46) | Comment like count | Comment like count does not immediately appear when posting a new comment. | Comment like count set to show as 0 if there is no value received from the API. As soon as the page relaods, the API value is retrieved and updates as expected. |
+| [#48](https://github.com/mariacjones1/postcards/issues/48) | Filtered view refresh | When the user is on a filtered view and refreshes the page, the url stays the same but the non-filtered home page view renders. UPDATE: This only happens with the continent filter. | Selected continent is stored in local storage. |
+| [#52](https://github.com/mariacjones1/postcards/issues/52) | Edit profile | Users cannot update profile without adding both location and favourite country. | allow_blank=True and required=False added to profiles serializer for both location and favourite_country. |
+| [#53](https://github.com/mariacjones1/postcards/issues/53) | New user login redirect | First-time users are briefly navigated back to the sign-up page before being redirected to the home page upon logging in. | if statement added to login redirect to send users to the homepage if their previous location was /signup. |
+| [#54](https://github.com/mariacjones1/postcards/issues/54) | User sign out | User is automatically signed back in upon page refresh after signing out | Does not appear to be an issue in the deployed version, only development. No fix needed. |
 
 ### Validator testing
 
