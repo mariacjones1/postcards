@@ -650,7 +650,7 @@ No automated tests have been run in Python; however, these should be added in th
 
 | Issue # | Title | Description | Outcome |
 | --- | --- | --- | --- |
-| [#36](https://github.com/mariacjones1/postcards/issues/36) | Navbar toggle | On smaller screens, navbar collapses when clicking on either the icon or the dropdown arrow for continents. Only clicking on the word 'Continents' itself shows the expanded list. | Dropdown is set as an unordered list on smaller screens, rather than a nested dropdown. |
+| [#36](https://github.com/mariacjones1/postcards/issues/36) | Navbar toggle | On smaller screens, navbar collapses when clicking on either the icon or the dropdown arrow for continents. Only clicking on the word 'Continents' itself shows the expanded list. | Dropdown is set to be permanently expanded if the navbar is open on smaller screens, rather than a second dropdown. |
 | [#38](https://github.com/mariacjones1/postcards/issues/38) | Compress logo | Site load is slow due to logo. Replace logo with compressed version to increase site load speed. | Logo replaced with compressed version. Site load is quicker. |
 | [#42](https://github.com/mariacjones1/postcards/issues/42) | Navbar dropdown toggle | Navbar does not close when selecting a continent from Continents dropdown. | Each dropdown NavLink is nested within a Dropdown.Item, fixing the issue. |
 | [#43](https://github.com/mariacjones1/postcards/issues/43) | Footer | The footer should be at the bottom of the screen and not overlap any content. | Background colour set on footer so there is no overlap with content behind. Height also reduced so it takes up less space on the screen. |
@@ -839,10 +839,12 @@ index.js
 
 | Browser | Layout | Features |
 | --- | --- | --- |
-| Chrome |  |  |
-| Firefox |  |  |
-| Edge |  |  |
-| Safari* |  |  |
+| Chrome | Y | Y |
+| Firefox | Y | Y |
+| Edge | Y | Y |
+| Safari* | Y | Y |
+
+*Tested on mobile only
 
 ### Responsiveness
 
@@ -920,14 +922,68 @@ Tested using Responsive Viewer extension in Chrome dev tools.
 
 ## Deployment
 
+### Backend
+
+Backend deployment completed before creating frontend.
+
+1. Create a new app on [Heroku](https://id.heroku.com/). Make sure to give it a unique name
+2. In the settings tab, add the required Config Vars:
+   - ALLOWED_HOST (set to deployed app URL, removing 'https://' and the trailing slash)
+   - CLIENT_ORIGIN (set to deployed app URL, removing the trailing slash)
+   - CLOUDINARY_URL (taken from Cloudinary API environment variable in Product Environment Credentials)
+   - DATABASE_URL (taken from ElephantSQL database)
+   - SECRET_KEY (generate a new one, do not use any key that has been saved in stttings.py)
+3. Install gunicorn in workspace terminal
+4. Create a Procfile
+5. Add corsheaders to INSTALLED_APPS in settings.py and corsheaders middleware to MIDDLEWARE (at the top), and set CORS_ALLOWED_ORIGINS to True
+6. Add JWT attributes to settings.py
+7. Make sure DEBUG is either set to False, or to only be True if the DEV environment variable exists
+8. Make sure requirements.txt is up-to-date and all code has been added, committed and pushed to GitHub
+9. Back on Heroku, open the deply tab and connect to your GitHub repository
+10. Click Deploy Branch and then either View or Open app to view the deployed app
+
+### Combining with the frontend
+
+1. Set up WhiteNoise for static files by installing it in the root directory and adding it to requirements.txt
+2. Create an empty staticfiles folder in the root directory
+3. Make sure cloudinary_storage is below django.contrib.staticfiles in settings.py
+4. Add WhiteNoise between SecurityMiddleware and SessionMiddleware
+5. Add code to the TEMPLATES DIRS key to tell Django and WhiteNoise where to look for React's index.html file
+6. Add STATIC_ROOT and WHITENOISE_ROOT variables to the static files section
+7. Remove root_route from drf_postcards urls.py and import TemplateView
+8. Replace root_route with TemplateView in urlpatterns
+9. Add the 404 handler
+10. Add 'api/' to the beginning of all API URLs, with the exception of the home page and the admin panel
+11. Set the baseURL in axiosDefaults.js in the frontend src folder to '/api'
+12. Collect admin and DRF staticfiles to the newly created staticfiles directory
+13. In the frontend directory, compile and move the React staticfiles (this needs to be redone before deplying any changes to the React code)
+14. Add a runtime.txt file to the root directory to set the Python version for Heroku to use
+15. Deploy the combined application from the Heroku dashboard
+
 ## Credits
 
 ### Media
 
+- The original logo image was found on [rawpixel.com](rawpixel.com) and edited using [GIMP](https://www.gimp.org/)
+- The favicon was created from the logo using [favicon.io](favicon.io)
+- Font icons were sourced on [Font Awesome](https://fontawesome.com/)
+- Other icons were sourced on [flaticon](https://www.flaticon.com)
+- Fonts were sourced on [Google Fonts](https://fonts.google.com/)
+- Post and form images were sourced on [Pexels](https://www.pexels.com/)
+- Profile images were sourcd on [Google Images](https://images.google.co.uk/)
+
 ### Coding resources
 
-#### General
+- [Django REST framework documentation](https://www.django-rest-framework.org/)
+- [React Bootstrap documentation](https://react-bootstrap-v4.netlify.app/)
+- [Django countries documentation](https://github.com/SmileyChris/django-countries)
+- [CI Tutor support](https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentadvancedfrontend/support)
+- [CI Django REST Framework walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DRF+2021_T1/courseware/f775d54df4da44d18309888b3fe884f7/bc5fbada70104d489aa0363a03d8bda8/)
+- [CI Moments walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/)
+- [Stack overflow](https://stackoverflow.com/)
 
-#### Specific queries
+#### Mentors
 
-#### Mentor
+- [Aleksei Konovalov](https://github.com/lexach91) for mentoring me at the start of the project and supporting me primarily with the backend development
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova/) for taking me on as a mentee at the 11th hour and supporting me primarily with frontend development, testing and documentation
+  
