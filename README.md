@@ -640,6 +640,12 @@ Automated tests were run to check the rendering of the navbar and footer:
 [NavBar](/frontend/src/components/__tests__/NavBar.test.js)
 [Footer](/frontend/src/components/__tests__/Footer.test.js)
 
+More automated JavaScript tests should be added in future to improve testing process and help with regression testing.
+
+#### Python
+
+No automated tests have been run in Python; however, these should be added in the future to improve testing process and help with regression testing.
+
 ### Bugs
 
 | Issue # | Title | Description | Outcome |
@@ -658,11 +664,21 @@ Automated tests were run to check the rendering of the navbar and footer:
 
 Infinite scroll does not work in the development environment and perpetually shows the loading icon; however, it works fine on the deployed site so no fix needed.
 
-All console.log() statements left in the files are in try catch blocks and have been commented out but left in for future debugging (as recommended in the Moments walkthrough project).
+All console.log() statements left in the files are in try catch blocks and have been commented out but left in for future debugging ([as recommended in the Moments walkthrough project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/f50e8ca2d7f6497c9d9857048d973ae4/)).
 
 ### Validation
 
 #### HTML validation
+
+[W3C](https://validator.w3.org/)
+
+index.html run through validator using direct input with no warnings:
+
+![index](/documentation/testing/validation/html/index.png)
+
+Other pages validated by URL as remaining HTML content is written in React files:
+
+![URL validation](/documentation/testing/validation/html/url-validation.png)
 
 #### CSS validation
 
@@ -670,7 +686,10 @@ All console.log() statements left in the files are in try catch blocks and have 
 
 All files passed with no warnings.
 
-Errors found
+Errors found:
+
+- webkit-scrollbar: this flags as an error because it is [only available in Blink- and WebKit-based browsers](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar). The app has been tested in the below browsers with no issues.
+- Same color for background-color and border-color: app has been thoroughly tested and this poses no issues. Keeping the CSS as-is allows for easier future mainenance of the affected elements.
 
 <details>
 
