@@ -219,6 +219,8 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 - The favicon and title make the app easy to identify in the browser, especially if a user has multiple tabs open.
 
+![Favicon and title](/documentation/features/favicon.png)
+
 ### Navigation
 
 - All users can navigate to the home page by clicking either the logo or the Home link in the navbar.
@@ -232,6 +234,10 @@ Created using [Balsamiq](https://balsamiq.com/)
 - The navbar collapses into a burger icon on smaller screens so that it takes up less space.
 - The use of react components means that the navbar does not reload each time the user navigates to a new page.
 
+![Navbar - logged in](/documentation/features/logged-in.png)
+
+![Navbar - logged out](/documentation/features/logged-out.png)
+
 ### Home page
 
 - The home page is accessible to all users - no login required.
@@ -239,6 +245,8 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Users can click on any post to see the full post page.
 - Users can click on any other user's avatar to see their profile page.
 - Users can see the popular and trending profiles on the right-hand side.
+
+![Home page](/documentation/features/home.png)
 
 ### Feed, Liked and Continent filters
 
@@ -248,11 +256,19 @@ Created using [Balsamiq](https://balsamiq.com/)
 - If the user accesses their liked posts but has not liked any posts, they will see a message letting them know there are no posts to show and to try liking some posts.
 - If the user access a continent for which there are no posts, they will see a message letting them know there are no posts to show and to try another continent.
 
+![Feed](/documentation/features/feed.png)
+
+![Liked](/documentation/features/liked.png)
+
+![Continent](/documentation/features/continent.png)
+
 ### Search bar
 
 - All users can search posts by title or username using the search bar above the rendered posts.
 - Logged-in users can use this feature on top of the feed, liked and continent filters.
 - If there are no posts matching the search terms, the users will see a message letting them know and suggesting they try searching for something else.
+
+![Search](/documentation/features/search.png)
 
 ### Post preview component
 
@@ -260,6 +276,8 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Users can see the post title, number of likes and comments below each image, and the post owner and creation date above it.
 - Users can view the post by clicking on the image or on the comment icon below it (comments themselves are only visible on the post page).
 - Hovering over the comment icon will cause it to become a darker colour so that it is obvious it can be clicked on.
+
+![Post preview](/documentation/features/post-preview.png)
 
 ### Post page
 
@@ -272,6 +290,8 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Logged-in users will see the comment form and be able to post comments on the post page.
 - If there are no comments, logged-in users will see a message saying they can be the first to comment and logged-out users will see a message simply saying there are no comments yet.
 
+![Post page](/documentation/features/post-page.png)
+
 ### Create, edit and delete posts
 
 - Logged-in users can create new posts by clicking the New postcard link in the navbar.
@@ -281,12 +301,24 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Users can update any fields and save their changes, or click cancel and keep their post the way it was.
 - Users will see error messages for any fields which contain invalid inputs so they know what issue they need to fix in order to create or edit their post.
 
+![Create post](/documentation/features/create-post.png)
+
+![Edit post](/documentation/features/edit-post-form.png)
+
+![Delete post](/documentation/features/delete-post.png)
+
 ### Post, edit and delete comments
 
 - Logged-in users can post comments by typing them in the form below the post on the post page and clicking the post button.
 - Users can edit or delete their own comments by clicking the three-dots dropdown in the top right-hand corner of the comment.
 - The edit comment form is rendered in place of the comment so that the user can make changes without leaving the page.
 - Users can update the comment and save their changes, or click cancel and keep their comment the way it was.
+
+![Post comment](/documentation/features/comment-form.png)
+
+![Edit comment](/documentation/features/comment-edit-form.png)
+
+![Delete comments](/documentation/features/comment-edit-delete.png)
 
 ### Like posts and comments
 
@@ -300,6 +332,10 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Logged-out users will see a tooltip saying they must log in to like a comment if they hover over the heart icon.
 - The number of likes on both posts and comments updates immediately as soon as a user likes/unlikes a post/comment.
 
+![Liked post](/documentation/features/like-post.png)
+
+![Liked comment](/documentation/features/comment-like.png)
+
 ### Profile page
 
 - Users can view the profile page of any user by clicking on their avatar in any of the page components (from one of that user's posts, from popular or trending profiles if the user is popular or trending, from a comment they have posted or from the last link in the navbar if they wish to view their own profile).
@@ -307,6 +343,16 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Users can edit their own profile by clicking the three-dots dropdown in the top right-hand corner of the profile component and clicking the Edit profile button. They can change any field excluding their stats, which are automatically calculated, and their username, which is handled on another form.
 - Users can update their username or password by clicking the three-dots dropdown in the top right-hand corner of the profile component and clicking the respective button.
 - Users will see error messages for any fields which contain invalid inputs so they know what issue they need to fix in order to update their profile, username or password.
+
+![Profile page](/documentation/features/profile-page.png)
+
+![Edit user options](/documentation/features/edit-profile-button.png)
+
+![Edit profile](/documentation/features/edit-profile-form.png)
+
+![Change username](/documentation/features/change-username-form.png)
+
+![Change password](/documentation/features/change-password-form.png)
 
 ### Popular and trending profiles
 
@@ -316,11 +362,17 @@ Created using [Balsamiq](https://balsamiq.com/)
 - All users will see the avatars and usernames of each popular and trending profile, and clicking on the avatar will take them to that user's profile page.
 - Logged-in users will see follow/unfollow buttons next to each popular and trending profile (excluding their own).
 
+![Popular profiles](/documentation/features/popular-profiles.png)
+
+![Trending profiles](/documentation/features/trending-profiles.png)
+
 ### Follow/unfollow users
 
 - Logged-in users can follow or unfollow any other user by clicking the follow/unfollow button on their profile page or next to their username if they appear in popular or trending profiles.
 - The follow/unfollow button will say 'follow' and appear navy blue for users the user doesn't follow, and it will say 'unfollow' and appear white for users they do follow.
 - Clicking on the button will change it immediately, as well as update the follower count of the followed user and the following count of the following user.
+
+![Follow/unfollow button](/documentation/features/follow-unfollow.png)
 
 ### Contact form
 
@@ -329,10 +381,14 @@ Created using [Balsamiq](https://balsamiq.com/)
 - Users will see a success message when they send it, so they know it has been successful and do not unnecessarily send duplicated messages.
 - Users will see error messages for any fields which contain invalid inputs so they know what issue they need to fix in order to send their message.
 
-### Custom error page
+![Contact form](/documentation/features/contact-form.png)
+
+### Custom error page (Page not found)
 
 - Users who try to access an invalid URL will see an image and a message letting them know that the page they are looking for doesn't exist.
 - The error component renders separately so the user is not navigated away from the site and can still access any link in the navbar.
+
+![Page not found](/documentation/features/not-found.png)
 
 ### Infinite scroll
 
@@ -340,14 +396,28 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ## Agile methodology
 
+### GitHub project
+
+All user stories were documented in a [Github project](https://github.com/users/mariacjones1/projects/3).
+
+Each user story was given labels based on the story type and prioritisation, and added to a sprint (milestone). The board view was used to keep track of which stories were yet to be started, which were being worked on and which had been completed. Issues were also created for any bugs found or potential enhancements to be made so as to easily keep track of all tasks to be done.
+
+Project board:
+
+![Project board](/documentation/planning/user_stories/project-board.png)
+
+User story example:
+
+![User story example](/documentation/planning/user_stories/user-story.png)
+
 ## Technology
 
 ### Languages used
 
-- HTML5
-- CSS3
-- JavaScript
-- Python
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/css)
+- [JavaScript](https://www.javascript.com/)
+- [Python](https://www.python.org/downloads/release/python-385/)
 
 ### Frameworks, libraries and programs used
 
