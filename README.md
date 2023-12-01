@@ -1,12 +1,14 @@
 # Postcards travel photo sharing platform
 
-Postcards is a photo sharing website that allows users to share photos from their travels with other users around the world. Users can write 'postcard' captions, like posts, leave and like comments and update their own profile with a profile picture, username, bio, their location, favourite country and travel experience.
+Postcards is a photo sharing app that allows users to share photos from their travels with other users around the world. Users can write 'postcard' captions, like posts, leave and like comments and update their own profile with a profile picture, username, bio, their location, favourite country and travel experience.
 
 Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postcards-mcj-2cd8ccaae35f.herokuapp.com/)
 
 ## Design and planning
 
 ### Site owner goals
+
+As the site owner, I want to provide an app for users to share images from their travels. They can like and comment on each others' posts to share feedback and start conversations, with the potential to connect with many users around the world. The website should be easy to navigate and components should render separately so as to prevent whole pages from reloading unnecessarily. I want users to see the benefits of signing up and engaging as registered users rather than anonymous visitors, so that the app gains many registered users who regularly post and engage with content.
 
 ### User stories
 
@@ -188,11 +190,30 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ### Design choices
 
+#### Colours
+
+- The main colour used throughout the site is the colour blue, as it is reminiscent of the sea and the sky which both feature heavily in a lot of travel photos. It is also a calming colour.
+
+#### Logo
+
+- The logo was created from a postcard image of palm trees on a beach, with the app name 'Postcards' written across it.
+
+#### Fonts
+
+- Sarabun was used for the majority of the text.
+- Kalam was used for the post content to look like handwriting.
+
+### Images
+
+- The sign up, sign in and contact forms each display a different image related to post/postcards (hidden on smaller screens).
+
 ## Features
 
 ### Responsive layouts
 
 - React Bootstrap has been used to make layouts responsive. Containers, rows and columns keep sections organised and allow for seamless use on different screen sizes.
+
+[See responsiveness testing](#responsiveness)
 
 ### Favicon and title
 
@@ -317,6 +338,8 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 - The posts page component and comments beneath posts use an infinite scroll so that new posts/comments are loaded without the user having to click next page each time.
 
+## Agile methodology
+
 ## Technology
 
 ### Languages used
@@ -371,7 +394,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 | User story | Requirement met? | Screenshot |
 | --- | --- | --- |
-| As a user, I can view the same navbar on each page, so that I can easily navigate between pages. | Y | ![Navbar - homepage](/documentation/testing/user_story/navigation/navigation-1.png) ![Navbar - liked](/documentation/testing/user_story/navigation/navigation-12.png) ![Navbar - create post](/documentation/testing/user_story/navigation/navigation-13.png) |
+| As a user, I can view the same navbar on each page, so that I can easily navigate between pages. | Y | ![Navbar - homepage](/documentation/testing/user_story/navigation/navigation-1.png) ![Navbar - liked](/documentation/testing/user_story/navigation/navigation-2.png) ![Navbar - create post](/documentation/testing/user_story/navigation/navigation-3.png) |
 | As a user, I can quickly navigate through different pages, so that I can view content seamlessly without the page needing to refresh. | Y | N/A |
 | As a user, I can create my own account, so that I can access all the additional features for registered users. | Y | ![Sign up page](/documentation/testing/user_story/navigation/signup.png) |
 | As a user, I can sign into the app, so that I can access additional functionality for logged-in users. | Y | ![Sign in page](/documentation/testing/user_story/navigation/signin.png) |
@@ -565,15 +588,19 @@ Automated tests were run to check the rendering of the navbar and footer:
 
 Infinite scroll does not work in the development environment and perpetually shows the loading icon; however, it works fine on the deployed site so no fix needed.
 
-All console.log() statements left in the files have been commented out but left in for future debugging.
+All console.log() statements left in the files are in try catch blocks and have been commented out but left in for future debugging (as recommended in the Moments walkthrough project).
 
 ### Validation
 
-#### CSS validator
+#### HTML validation
+
+#### CSS validation
 
 [W3C Jigsaw](https://jigsaw.w3.org/css-validator/)
 
 All files passed with no warnings.
+
+Errors found
 
 <details>
 
@@ -632,7 +659,7 @@ SignInUpForm.module.css
 
 </details>
 
-#### JavaScript validator
+#### JavaScript validation
 
 [ESLint](https://eslint.org/)
 
@@ -683,7 +710,7 @@ index.js
 
 </details>
 
-#### Python validator
+#### Python validation
 
 [PEP8](https://pep8ci.herokuapp.com/)
 
