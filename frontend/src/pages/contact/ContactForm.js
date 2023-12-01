@@ -50,7 +50,7 @@ const ContactForm = () => {
                     )}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="name">
-                            <Form.Label>Name</Form.Label>
+                            <Form.Label className="d-none">Name</Form.Label>
                             <Form.Control
                                 className={formStyles.Input}
                                 type="text"
@@ -65,7 +65,7 @@ const ContactForm = () => {
                         )}
 
                         <Form.Group controlId="email">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label className="d-none">Email address</Form.Label>
                             <Form.Control
                                 className={formStyles.Input}
                                 type="email"
@@ -80,7 +80,7 @@ const ContactForm = () => {
                         )}
 
                         <Form.Group controlId="message">
-                            <Form.Label>Message</Form.Label>
+                            <Form.Label className="d-none">Message</Form.Label>
                             <Form.Control
                                 className={formStyles.Input}
                                 as="textarea"

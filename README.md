@@ -619,30 +619,79 @@ index.js
 | Edge |  |  |
 | Safari* |  |  |
 
-### Device/screen size tests
+### Responsiveness
 
-(Tested using Dev Tools, portrait and landscape where applicable)
+Tested using Responsive Viewer extension in Chrome dev tools.
 
-| Device | Layout |
-| --- | --- |
-| HP laptop screen (size 1536 x 864) |  |
-| iPhone SE |  |
-| Pixel 5 |  |
-| Samsung Galaxy S20 Ultra |  |
-| iPad Air |  |
-| Surface Pro 7 |  |
-| Nest Hub |  |
+#### Home page
+
+![Home page responsiveness](/documentation/testing/responsiveness/home.png)
+
+#### Post page
+
+![Post page responsiveness](/documentation/testing/responsiveness/post.png)
+
+#### Edit post page
+
+![Edit post page responsiveness](/documentation/testing/responsiveness/edit-post.png)
+
+#### Profile page
+
+![Profile page responsiveness](/documentation/testing/responsiveness/profile.png)
+
+#### Edit profile page
+
+![Edit profile page responsiveness](/documentation/testing/responsiveness/edit-profile.png)
+
+#### Sign up page
+
+![Sign up page responsiveness](/documentation/testing/responsiveness/sign-up.png)
+
+#### Sign in page
+
+![sign in page responsiveness](/documentation/testing/responsiveness/sign-in.png)
+
+#### Contact page
+
+![Contact page responsiveness](/documentation/testing/responsiveness/contact-form.png)
 
 ### Dev Tools Lighthouse tests
 
-path: "/"
+#### "/"
 
-| Category | Score |
-| --- | --- |
-| Performance |  |
-| Accessability |  |
-| Best Practices |  |
-| SEO |  |
+![Home page lighthouse test](/documentation/testing/lighthouse/home.png)
+
+#### "/feed"
+
+![Feed page lighthouse test](/documentation/testing/lighthouse/feed.png)
+
+#### "/liked"
+
+![Liked page lighthouse test](/documentation/testing/lighthouse/liked.png)
+
+#### "/posts/continent/:continent"
+
+![Continent page lighthouse test](/documentation/testing/lighthouse/continent.png)
+
+#### "/posts/:id"
+
+![Post page lighthouse test](/documentation/testing/lighthouse/post.png)
+
+#### "/profiles/:id"
+
+![Profile page lighthouse test](/documentation/testing/lighthouse/profile.png)
+
+#### "/signup"
+
+![Sign up page lighthouse test](/documentation/testing/lighthouse/sign-up.png)
+
+#### "/signin"
+
+![Sign in page lighthouse test](/documentation/testing/lighthouse/sign-in.png)
+
+#### "/contact"
+
+![Contact page lighthouse test](/documentation/testing/lighthouse/contact.png)
 
 ## Deployment
 
