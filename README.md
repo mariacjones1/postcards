@@ -192,33 +192,130 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 ### Responsive layouts
 
+- React Bootstrap has been used to make layouts responsive. Containers, rows and columns keep sections organised and allow for seamless use on different screen sizes.
+
 ### Favicon and title
+
+- The favicon and title make the app easy to identify in the browser, especially if a user has multiple tabs open.
 
 ### Navigation
 
-### Homepage
+- All users can navigate to the home page by clicking either the logo or the Home link in the navbar.
+- Logged-out users can access the sign up and sign in pages by clicking the respective links in the navbar.
+- Logged-in users can create new posts by clicking the New postcard link in the navbar.
+- Logged-in users can access their feed and liked posts by clicking the respective links in the navbar.
+- Logged-in users can filter posts by continent by clicking the Continents link in the navbar and selecting a continent from the dropdown menu.
+- Logged-in users can sign out by clikcing the Sign out link in the navbar.
+- Logged-in users can access their profile by clicking on their avatar or username in the navbar.
+- The available navbar links make it clear to the user if they are logged in or not.
+- The navbar collapses into a burger icon on smaller screens so that it takes up less space.
+- The use of react components means that the navbar does not reload each time the user navigates to a new page.
+
+### Home page
+
+- The home page is accessible to all users - no login required.
+- Users can scroll through the latest posts by all registered site users and see the number of likes and comments each one has.
+- Users can click on any post to see the full post page.
+- Users can click on any other user's avatar to see their profile page.
+- Users can see the popular and trending profiles on the right-hand side.
 
 ### Feed, Liked and Continent filters
 
+- Logged-in users can access feed, liked and continent pages by clicking the respective links in the navbar.
+- Feed, liked and continent-filtered pages all use the same posts page with the post preview component. This is the only part of the page that reloads.
+- If the user accesses their feed but has not followed any users, they wil see a message letting them know there are no posts to show and to try following some users.
+- If the user accesses their liked posts but has not liked any posts, they will see a message letting them know there are no posts to show and to try liking some posts.
+- If the user access a continent for which there are no posts, they will see a message letting them know there are no posts to show and to try another continent.
+
 ### Search bar
+
+- All users can search posts by title or username using the search bar above the rendered posts.
+- Logged-in users can use this feature on top of the feed, liked and continent filters.
+- If there are no posts matching the search terms, the users will see a message letting them know and suggesting they try searching for something else.
 
 ### Post preview component
 
+- Larger version of image to catch user's attention and keep the posts page looking tidier.
+- Users can see the post title, number of likes and comments below each image, and the post owner and creation date above it.
+- Users can view the post by clicking on the image or on the comment icon below it (comments themselves are only visible on the post page).
+- Hovering over the comment icon will cause it to become a darker colour so that it is obvious it can be clicked on.
+
 ### Post page
+
+- Smaller version of the image next to the post content.
+- Post content has a white background and is written in a handwriting font, with a stamp icon in the top right-hand corner to mimic a postcard.
+- Users can see the post title, number of likes and comments below each image, and the post owner and creation date above it.
+- Logged-in users can like the post by clicking on the heart icon.
+- The hover effect has been removed from the comment icon so as not to make the user think clicking on it does anything.
+- All users can read the comments below the post and see who posted it, when and how many likes it has.
+- Logged-in users will see the comment form and be able to post comments on the post page.
+- If there are no comments, logged-in users will see a message saying they can be the first to comment and logged-out users will see a message simply saying there are no comments yet.
 
 ### Create, edit and delete posts
 
+- Logged-in users can create new posts by clicking the New postcard link in the navbar.
+- Users can upload an image, write a title and content and select the continent and holiday type for each post.
+- Users can edit or delete their own posts by clicking the three-dots dropdown in the top right-hand corner of the post component on the post page.
+- The edit post page is the same as the create post page but with the existing data showing.
+- Users can update any fields and save their changes, or click cancel and keep their post the way it was.
+- Users will see error messages for any fields which contain invalid inputs so they know what issue they need to fix in order to create or edit their post.
+
 ### Post, edit and delete comments
+
+- Logged-in users can post comments by typing them in the form below the post on the post page and clicking the post button.
+- Users can edit or delete their own comments by clicking the three-dots dropdown in the top right-hand corner of the comment.
+- The edit comment form is rendered in place of the comment so that the user can make changes without leaving the page.
+- Users can update the comment and save their changes, or click cancel and keep their comment the way it was.
 
 ### Like posts and comments
 
+- Logged-in users can like or unlike a post by clicking on the heart icon on either the post preview component on the posts page, or on the post component on the post page.
+- The heart icon below a post the user has liked will be solid pink.
+- Logged-in users will see a tooltip saying they cannot like their own post if they hover over the heart icon.
+- Logged-out users will see a tooltip saying they must log in to like a post if they hover over the heart icon.
+- Logged-in users can like or unlike a comment by clicking on the heart icon to the right of the comment on the post page.
+- The heart icon next to a comment the user has liked will be solid pink.
+- Logged-in users will see a tooltip saying they cannot like their own comment if they hover over the heart icon.
+- Logged-out users will see a tooltip saying they must log in to like a comment if they hover over the heart icon.
+- The number of likes on both posts and comments updates immediately as soon as a user likes/unlikes a post/comment.
+
 ### Profile page
+
+- Users can view the profile page of any user by clicking on their avatar in any of the page components (from one of that user's posts, from popular or trending profiles if the user is popular or trending, from a comment they have posted or from the last link in the navbar if they wish to view their own profile).
+- Profiles show the avatar and username of the user, their stats (number of posts, number of followers, number of users they follow), their location, favourite country and travel experience, any bio they have written. and all of that user's posts starting from the most recent.
+- Users can edit their own profile by clicking the three-dots dropdown in the top right-hand corner of the profile component and clicking the Edit profile button. They can change any field excluding their stats, which are automatically calculated, and their username, which is handled on another form.
+- Users can update their username or password by clicking the three-dots dropdown in the top right-hand corner of the profile component and clicking the respective button.
+- Users will see error messages for any fields which contain invalid inputs so they know what issue they need to fix in order to update their profile, username or password.
 
 ### Popular and trending profiles
 
+- Popular and trending profiles are shown on the right-hand side of any posts page, single post page and profile page. They do not reload when the user navigates between these pages as they are separate components.
+- Popular profiles shows the users with the most total followers.
+- Trending profiles shows the users with the most followers gained in the last week.
+- All users will see the avatars and usernames of each popular and trending profile, and clicking on the avatar will take them to that user's profile page.
+- Logged-in users will see follow/unfollow buttons next to each popular and trending profile (excluding their own).
+
+### Follow/unfollow users
+
+- Logged-in users can follow or unfollow any other user by clicking the follow/unfollow button on their profile page or next to their username if they appear in popular or trending profiles.
+- The follow/unfollow button will say 'follow' and appear navy blue for users the user doesn't follow, and it will say 'unfollow' and appear white for users they do follow.
+- Clicking on the button will change it immediately, as well as update the follower count of the followed user and the following count of the following user.
+
 ### Contact form
 
+- Users can send feedback to the site owner(s) by filling in the contact form.
+- All users can access the contact form to send a message; being logged in is not required.
+- Users will see a success message when they send it, so they know it has been successful and do not unnecessarily send duplicated messages.
+- Users will see error messages for any fields which contain invalid inputs so they know what issue they need to fix in order to send their message.
+
 ### Custom error page
+
+- Users who try to access an invalid URL will see an image and a message letting them know that the page they are looking for doesn't exist.
+- The error component renders separately so the user is not navigated away from the site and can still access any link in the navbar.
+
+### Infinite scroll
+
+- The posts page component and comments beneath posts use an infinite scroll so that new posts/comments are loaded without the user having to click next page each time.
 
 ## Technology
 
@@ -351,10 +448,16 @@ Created using [Balsamiq](https://balsamiq.com/)
 | 2 | Click New postcard | Create post form is displayed | Y | |
 | 3 | Click Home | Home page is displayed | Y | |
 | 4 | Click Feed | Only posts by users user is following are displayed | Y | |
-| 5 | Click Liked | Only posts user has liked are displayed | Y | |
-| 6 | Click Continents | Dropdown list of continents is displayed | Y | |
-| 7 | Click a specific continent from dropdown | Posts filtered by that continent are displayed | Y | |
-| 8 | Click Sign out | User is signed out and redirected to home page | Y | |
+| 5 | Click Feed but no users followed | Image and message appear saying no posts found | Y | |
+| 6 | Click Liked | Only posts user has liked are displayed | Y | |
+| 7 | Click Like but no posts liked| Image and message appear saying no posts found | Y | |
+| 8 | Click Continents | Dropdown list of continents is displayed | Y | |
+| 9 | Click Continents but no available posts | Image and message appear saying no posts found | Y | |
+| 10 | Click a specific continent from dropdown | Posts filtered by that continent are displayed | Y | |
+| 11 | Click Sign out | User is signed out and redirected to home page | Y | |
+| Search bar | | | | |
+| 1 | Enter search term | Posts filtered by search term are displayed | Y | |
+| 2 | Enter search term for which there are no results | Image and message appear saying no posts found | Y | |
 | Sign Up | | | | |
 | 1 | Enter username | Username is set | Y | |
 | 2 | Enter password | Password is set | Y | |
@@ -457,6 +560,12 @@ Automated tests were run to check the rendering of the navbar and footer:
 | [#52](https://github.com/mariacjones1/postcards/issues/52) | Edit profile | Users cannot update profile without adding both location and favourite country. | allow_blank=True and required=False added to profiles serializer for both location and favourite_country. |
 | [#53](https://github.com/mariacjones1/postcards/issues/53) | New user login redirect | First-time users are briefly navigated back to the sign-up page before being redirected to the home page upon logging in. | if statement added to login redirect to send users to the homepage if their previous location was /signup. |
 | [#54](https://github.com/mariacjones1/postcards/issues/54) | User sign out | User is automatically signed back in upon page refresh after signing out | Does not appear to be an issue in the deployed version, only development. No fix needed. |
+
+#### Other known bugs
+
+Infinite scroll does not work in the development environment and perpetually shows the loading icon; however, it works fine on the deployed site so no fix needed.
+
+All console.log() statements left in the files have been commented out but left in for future debugging.
 
 ### Validation
 
