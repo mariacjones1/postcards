@@ -80,6 +80,7 @@ Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postc
 | --- | --- | --- |
 | [#32](https://github.com/mariacjones1/postcards/issues/32) | Contact form | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. |
 | [#41](https://github.com/mariacjones1/postcards/issues/41) | Form images | As a user, I can see different images on the sign in, sign up and contact forms, so that each form is visually different. |
+| [#55](https://github.com/mariacjones1/postcards/issues/55) | Submit contact form | As a user, I can see a message confirming my message has been sent, so that I know it was successful. |
 
 ### Models
 
@@ -315,6 +316,7 @@ Created using [Balsamiq](https://balsamiq.com/)
 | --- | --- | --- |
 | As a user, I can send a message to the site admins, so that I can directly share any feedback I have about the site in general. | Y | ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
 | As a user, I can see different images on the sign in, sign up and contact forms, so that each form is visually different. | Y | ![Sign up form](/documentation/testing/user_story/navigation/signup.png) ![Sign in form](/documentation/testing/user_story/navigation/signin.png) ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
+| Submit contact form | As a user, I can see a message confirming my message has been sent, so that I know it was successful. | Y | ![Contact form success](/documentation/testing/user_story/contact/contact-form-success.png) |
 
 ### Manual testing
 
@@ -402,6 +404,13 @@ Created using [Balsamiq](https://balsamiq.com/)
 | Footer | | | | |
 | 1 | Click on the Contact us link | Contact form is displayed | Y | |
 | 2 | Click on the GitHub link | Developer's GitHub page will open in a new tab | Y | |
+| Contact form | | | | |
+| 1 | Type in name | Name is set | Y | |
+| 2 | Type in email address | Email is set | Y | |
+| 3 | Type in message | Message is set | Y | |
+| 4 | Click send with valid inputs | Message is sent and success message shows | Y | |
+| 5 | Click send with invalid inputs | Message is not sent and error messages show | Y | |
+| 6 | Click send with corrected inputs | Message is sent, success message shows and error messages are cleared | Y | |
 
 ### Automated testing
 
