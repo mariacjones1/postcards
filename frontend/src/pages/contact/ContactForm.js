@@ -7,7 +7,6 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import styles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -21,7 +20,7 @@ const ContactForm = () => {
     });
     const { name, email, message } = contactData;
     const [errors, setErrors] = useState({});
-    const history = useHistory();
+    const [success, setSuccess] = useState(false);
 
     const handleChange = (event) => {
         setContactData({
@@ -34,7 +33,8 @@ const ContactForm = () => {
         event.preventDefault();
         try {
             await axios.post("/contact/", contactData);
-            history.push("/");
+            setSuccess(true);
+            setErrors(false);
         } catch (err) {
             setErrors(err.response?.data);
         }
@@ -45,6 +45,9 @@ const ContactForm = () => {
             <Col className="my-auto py-2 p-md-2" md={6}>
                 <Container className={`${styles.Content} p-4 `}>
                     <h1 className={formStyles.Header}>Contact us</h1>
+                    {success && (
+                        <Alert variant="success">Your message has been sent!</Alert>
+                    )}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="name">
                             <Form.Label>Name</Form.Label>
