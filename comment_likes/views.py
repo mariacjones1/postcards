@@ -18,7 +18,7 @@ class CommentLikeList(generics.ListCreateAPIView):
 
 
 class CommentLikeDetail(generics.RetrieveDestroyAPIView):
-    """Retrieve all comment likes or delete user's own comment like"""
+    """Retrieve a comment like or delete user's own comment like"""
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = CommentLikeSerializer
     queryset = CommentLike.objects.all()

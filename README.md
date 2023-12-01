@@ -394,6 +394,18 @@ Created using [Balsamiq](https://balsamiq.com/)
 
 - The posts page component and comments beneath posts use an infinite scroll so that new posts/comments are loaded without the user having to click next page each time.
 
+## React components
+
+Using reusable React components means individual components can be used on different pages, meaning code does not need to be repeated (DRY principle) and components can render individually, rather than whole pages needing to reload each time the user takes an action.
+
+Reusable components used in this project:
+
+- Asset, Avatar, Footer, MoreDropdown, NavBar, NotFound - these small components are rendered on many, if not all, pages
+- Comment - this component is rendered multiple times on the PostPage (once per comment for the post)
+- Post - this component is currently only rendered on the PostPage, but having it as a separate component means it can be reused elsewhere in the future
+- PostPreview - this component is rendered multiple times on the PostsPage (once per post in the view)
+- Profile - this component is rendered multiple times within PopularProfiles and TrendingProfiles (once per profile)
+
 ## Agile methodology
 
 ### GitHub project
@@ -532,7 +544,7 @@ User story example:
 | As a user, I can see different images on the sign in, sign up and contact forms, so that each form is visually different. | Y | ![Sign up form](/documentation/testing/user_story/navigation/signup.png) ![Sign in form](/documentation/testing/user_story/navigation/signin.png) ![Contact form](/documentation/testing/user_story/contact/contact-form.png) |
 | Submit contact form | As a user, I can see a message confirming my message has been sent, so that I know it was successful. | Y | ![Contact form success](/documentation/testing/user_story/contact/contact-form-success.png) |
 
-### Manual testing
+### Manual testing - frontend
 
 | Page | User Actions | Expected Results | Y/N | Comments |
 |---|---|---|---|---|
@@ -631,6 +643,63 @@ User story example:
 | 4 | Click send with valid inputs | Message is sent and success message shows | Y | |
 | 5 | Click send with invalid inputs | Message is not sent and error messages show | Y | |
 | 6 | Click send with corrected inputs | Message is sent, success message shows and error messages are cleared | Y | |
+
+### Manual testing - backend
+
+| App | Test | Y/N |
+|---|---|---|
+| comment_likes | | |
+| 1 | Comment likes are ordered in reverse order of creation date | Y |
+| 2 | User cannot create duplicate comment likes | Y |
+| 3 | User can create new comment likes if they are signed in | Y |
+| 4 | User can delete a comment like only if they are its owner | Y |
+| comments | | |
+| 1 | Comments are ordered in reverse order of creation date | Y |
+| 2 | Retrieved comments show number of likes and owner data, as well as comment content and creation time | Y |
+| 3 | Comments created_at and updated_at are written as e.g., "2 days, 7 hours ago" | Y |
+| 4 | User can create a new comment only if they are signed in | Y |
+| 5 | User can update a comment only if they are its owner | Y |
+| 6 | User can delete a comment only if they are its owner | Y |
+| contact | | |
+| 1 | User can submit a new contact message regardless of signed-in status | Y |
+| followers | | |
+| 1 | User can follow another user only if they are signed in | Y |
+| 2 | User cannot follow the same user twice | Y |
+| 3 | User can delete their own follow | Y |
+| likes | | |
+| 1 | Likes are ordered in reverse order of creation date | Y |
+| 2 | User cannot create duplicate likes | Y |
+| 3 | User can create new likes if they are signed in | Y |
+| 4 | User can delete a like only if they are its owner | Y |
+| posts | | |
+| 1 | User can only create a new post if they are signed in | Y |
+| 2 | Post will not be created without a title | Y |
+| 3 | Post can be created without content | Y |
+| 4 | Post image, continent and holiday_type will be set to default values if not otherwise set | Y |
+| 5 | Post image, continent and holiday_type will be set to new values if set | Y |
+| 6 | continent and holiday_type will provide dropdown options | Y |
+| 7 | Posts are ordered in reverse order of creation date | Y |
+| 8 | Each post displays like and comment count | Y |
+| 9 | continent_display and holiday_type_display are set to relevant display values based on selected continent and holiday_type values respectively | Y |
+| 10 | User will see and error message if they upload an image that is too large | Y |
+| 11 | Posts can be filtered by owner, liked and continent | Y |
+| 12 | Posts can be filtered by search terms | Y |
+| 13 | User can update a post only if they are its owner | Y |
+| 14 | User can delete a post only if they are its owner | Y |
+| profiles | | |
+| 1 | User profile image is set to default image upon creation | Y |
+| 2 | travel_experience will be set to newbie upon creation | Y |
+| 3 | User can update a profile only if they are its owner | Y |
+| 4 | location and favourite_country will provide a dropdown list of all countries to select from | Y |
+| 5 | name, content, location and favourite_country will be empty strings unless otherwise set | Y |
+| 6 | Profiles are ordered in reverse order of creation date | Y |
+| 7 | Each profile is connected to a unique User model instance | Y |
+| 8 | Each profile displays the following_count, followers_count and recent_followers_count | Y |
+| 9 | travel_experience_display is set to relevant display value based on the selected travel_experience_value | Y |
+| 10 | recent_followers_count increases by one each time a new user follows the profile, but reduces by one a week after each follow | Y |
+| 11 | followers_count increases by one each time a new user follows the profile | Y |
+| 12 | following_count increases by one each time the user follows a new profile | Y |
+| 13 | location and favourite_country display the country name rather than the country code | Y |
 
 ### Automated testing
 
