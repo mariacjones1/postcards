@@ -162,6 +162,30 @@ Created using [dbdiagram.io](https://dbdiagram.io/)
 
 Created using [Balsamiq](https://balsamiq.com/)
 
+#### Home/feed page
+
+![Home page](/documentation/planning/wireframes/home-feed.png)
+
+#### Post page
+
+![Post page](/documentation/planning/wireframes/post.png)
+
+#### Create post page
+
+![Create post](/documentation/planning/wireframes/create-post.png)
+
+#### Sign up page
+
+![Sign up page](/documentation/planning/wireframes/sign-up.png)
+
+#### Sign in page
+
+![Sign in page](/documentation/planning/wireframes/sign-in.png)
+
+#### Contact form
+
+![Contact form](/documentation/planning/wireframes/contact-form.png)
+
 ### Design choices
 
 ## Features
