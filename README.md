@@ -764,10 +764,6 @@ Errors found:
 - webkit-scrollbar: this flags as an error because it is [only available in Blink- and WebKit-based browsers](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar). The app has been tested in the below browsers with no issues.
 - Same color for background-color and border-color: app has been thoroughly tested and this poses no issues. Keeping the CSS as-is allows for easier future mainenance of the affected elements.
 
-<details>
-
-<summary>Screenshots</summary>
-
 App.module.css
 ![App.module.css](/documentation/testing/validation/css/App.png)
 
@@ -819,8 +815,6 @@ ProfilePage.module.css
 SignInUpForm.module.css
 ![SignInUpForm.module.css](/documentation/testing/validation/css/SignInUpForm.png)
 
-</details>
-
 #### JavaScript validation
 
 [ESLint](https://eslint.org/)
@@ -832,10 +826,6 @@ No warnings were returned. Errors were found in some files as per the screenshot
 The following rules were ignored:
 
 ![ignored](/documentation/testing/validation/js/ignored.png)
-
-<details>
-
-<summary>Screenshots</summary>
 
 ##### App.js
 ![App.js validation](/documentation/testing/validation/js/app.png)
@@ -870,8 +860,6 @@ The following rules were ignored:
 ###### profiles
 
 ![profiles folder validation](/documentation/testing/validation/js/pages-profiles.png)
-
-</details>
 
 #### Python validation
 
