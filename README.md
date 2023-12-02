@@ -4,6 +4,8 @@ Postcards is a photo sharing app that allows users to share photos from their tr
 
 Final website: [https://postcards-mcj-2cd8ccaae35f.herokuapp.com/](https://postcards-mcj-2cd8ccaae35f.herokuapp.com/)
 
+![Responsive mockup](/documentation/testing/responsiveness/responsive-mockup.png)
+
 ## Design and planning
 
 ### Site owner goals
