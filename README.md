@@ -550,7 +550,7 @@ User story example:
 
 | Page | User Actions | Expected Results | Y/N | Comments |
 |---|---|---|---|---|
-| Navigation | | | | |
+| **Navigation** | | | | |
 | 1 | Click on the logo | Home page is displayed | Y | |
 | 2 | Click New postcard | Create post form is displayed | Y | |
 | 3 | Click Home | Home page is displayed | Y | |
@@ -562,23 +562,23 @@ User story example:
 | 9 | Click Continents but no available posts | Image and message appear saying no posts found | Y | |
 | 10 | Click a specific continent from dropdown | Posts filtered by that continent are displayed | Y | |
 | 11 | Click Sign out | User is signed out and redirected to home page | Y | |
-| Search bar | | | | |
+| **Search bar** | | | | |
 | 1 | Enter search term | Posts filtered by search term are displayed | Y | |
 | 2 | Enter search term for which there are no results | Image and message appear saying no posts found | Y | |
-| Sign Up | | | | |
+| **Sign Up** | | | | |
 | 1 | Enter username | Username is set | Y | |
 | 2 | Enter password | Password is set | Y | |
 | 3 | Enter confirm password | Confirm password is set | Y | |
 | 4 | Click sign up with all valid inputs | User account is created and user is redirected to sign in page | Y | |
 | 5 | Click sign up with invalid inputs | User account is not created and error messages are displayed telling user what the issue is | Y | |
 | 6 | Click sign in link | User is redirected to sign in page | Y | |
-| Sign In | | | | |
+| **Sign In** | | | | |
 | 1 | Enter username | Username is set | Y | |
 | 2 | Enter password | Password is set | Y | |
 | 4 | Click sign in with existing data | User is signed in and directed to either the last page they were on or the home page | Y | |
 | 5 | Click sign in with non-existant user data | Error message is displayed telling the user they are unable to log in with provided credentials | Y | |
 | 6 | Click sign up link | User is redirected to sign up page | Y | |
-| Create post | | | | |
+| **Create post** | | | | |
 | 1 | Upload image | Image is set | Y | |
 | 2 | Type in title | Title is set | Y | |
 | 3 | Type in content | Content is set | Y | |
@@ -586,14 +586,14 @@ User story example:
 | 5 | Select holiday type | Holiday type is set | Y | |
 | 7 | Click create button | User is redirected to post page with updated post | Y | |
 | 8 | Click cancel button | User is redirected to the last page they were on | Y | |
-| Post | | | | |
+| **Post** | | | | |
 | 1 | Click on the Edit button | Edit post form is displayed | Y | |
 | 2 | Click on the Delete button | Post is deleted | Y | |
 | 3 | Click the heart icon as a logged-in user | Like is added to the post and the heart turns solid pink | Y | |
 | 4 | Click the heart icon as a logged-out user | Message displays saying you must log in to like posts | Y | |
 | 5 | Click the heart icon as the post owner | Message displays saying you can't like your own post | Y | |
 | 6 | Type a new comment and click post | New comment appears below post and comment count increases by one | Y | |
-| Edit post | | | | |
+| **Edit post** | | | | |
 | 1 | Upload a new image | Image is updated | Y | |
 | 2 | Type in new title | Title is updated | Y | |
 | 3 | Type in new content | Content is updated | Y | |
@@ -602,22 +602,22 @@ User story example:
 | 6 | Only update certain fields | Form is submitted with only certain fields updated | Y | Continent and holiday type are set to sefault values unless otherwise selected. |
 | 7 | Click save button | User is redirected to post page with updated post | Y | |
 | 8 | Click cancel button | User is redirected to post page with unchanged post | Y | |
-| Delete post | | | | |
+| **Delete post** | | | | |
 | 1 | Click delete button | Post is deleted and user is redirected to the home page | Y | |
-| Comment | | | | |
+| **Comment** | | | | |
 | 1 | Click on the Edit button | Edit comment form is displayed | Y | |
 | 2 | Click on the Delete button | Comment is deleted and comment count decreases by one | Y | |
 | 3 | Click the heart icon as a logged-in user | Like is added to the comment and the heart turns solid pink | Y | |
 | 4 | Click the heart icon as a logged-out user | Message displays saying you must log in to like comments | Y | |
 | 5 | Click the heart icon as the comment owner | Message displays saying you can't like your own comment | Y | |
-| Follow and unfollow | | | | |
+| **Follow and unfollow** | | | | |
 | 1 | Click on the follow button | Button displays unfollow and following count increases by 1 | Y | |
 | 2 | Click on the unfollow button | Button displays follow and following count decreases by 1 | Y | |
-| Profile | | | | |
+| **Profile** | | | | |
 | 1 | Click on the Edit profile button | Edit profile form is displayed | Y | |
 | 2 | Click on the Change username button | New username form is displayed | Y | |
 | 3 | Click on the Change password button | New password form is displayed | Y | |
-| Edit profile | | | | |
+| **Edit profile** | | | | |
 | 1 | Upload a new image | Profile image is updated | Y | |
 | 2 | Type in new bio | Bio is updated | Y | |
 | 3 | Select location | Location is updated | Y | |
@@ -626,19 +626,19 @@ User story example:
 | 6 | Only update certain fields | Form is submitted with only certain fields updated | Y | For location and favourite country, the dropdown will show 'Afghanistan' by default but this value will not be saved unless it is selected by the user. Travel experience is set to a default value if not otherwise selected. |
 | 7 | Click save button | User is redirected to profile page with updated profile | Y | |
 | 8 | Click cancel button | User is redirected to profile page with unchanged profile | Y | |
-| Edit username | | | | |
+| **Edit username** | | | | |
 | 1 | Type in new username | Username is updated | Y | |
 | 2 | Click save button | User is redirected to profile page with updated username | Y | |
 | 3 | Click cancel button | User is redirected to profile page with unchanged username | Y | |
-| Edit user password | | | | |
+| **Edit user password** | | | | |
 | 1 | Type in valid password twice and click Save | Password is updated | Y | |
 | 2 | Type in an invalid or non-matching passwords | Error messages are displayed telling user what the issue is | Y | |
 | 3 | Click save button | User is redirected to profile page with updated password | Y | |
 | 4 | Click cancel button | User is redirected to profile page with unchanged password | Y | |
-| Footer | | | | |
+| **Footer** | | | | |
 | 1 | Click on the Contact us link | Contact form is displayed | Y | |
 | 2 | Click on the GitHub link | Developer's GitHub page will open in a new tab | Y | |
-| Contact form | | | | |
+| **Contact form** | | | | |
 | 1 | Type in name | Name is set | Y | |
 | 2 | Type in email address | Email is set | Y | |
 | 3 | Type in message | Message is set | Y | |
@@ -650,30 +650,30 @@ User story example:
 
 | App | Test | Y/N |
 |---|---|---|
-| comment_likes | | |
+| **comment_likes** | | |
 | 1 | Comment likes are ordered in reverse order of creation date | Y |
 | 2 | User cannot create duplicate comment likes | Y |
 | 3 | User can create new comment likes if they are signed in | Y |
 | 4 | User can delete a comment like only if they are its owner | Y |
-| comments | | |
+| **comments** | | |
 | 1 | Comments are ordered in reverse order of creation date | Y |
 | 2 | Retrieved comments show number of likes and owner data, as well as comment content and creation time | Y |
 | 3 | Comments created_at and updated_at are written as e.g., "2 days, 7 hours ago" | Y |
 | 4 | User can create a new comment only if they are signed in | Y |
 | 5 | User can update a comment only if they are its owner | Y |
 | 6 | User can delete a comment only if they are its owner | Y |
-| contact | | |
+| **contact** | | |
 | 1 | User can submit a new contact message regardless of signed-in status | Y |
-| followers | | |
+| **followers** | | |
 | 1 | User can follow another user only if they are signed in | Y |
 | 2 | User cannot follow the same user twice | Y |
 | 3 | User can delete their own follow | Y |
-| likes | | |
+| **likes** | | |
 | 1 | Likes are ordered in reverse order of creation date | Y |
 | 2 | User cannot create duplicate likes | Y |
 | 3 | User can create new likes if they are signed in | Y |
 | 4 | User can delete a like only if they are its owner | Y |
-| posts | | |
+| **posts** | | |
 | 1 | User can only create a new post if they are signed in | Y |
 | 2 | Post will not be created without a title | Y |
 | 3 | Post can be created without content | Y |
@@ -688,7 +688,7 @@ User story example:
 | 12 | Posts can be filtered by search terms | Y |
 | 13 | User can update a post only if they are its owner | Y |
 | 14 | User can delete a post only if they are its owner | Y |
-| profiles | | |
+| **profiles** | | |
 | 1 | User profile image is set to default image upon creation | Y |
 | 2 | travel_experience will be set to newbie upon creation | Y |
 | 3 | User can update a profile only if they are its owner | Y |
@@ -747,6 +747,8 @@ index.html run through validator using direct input with no warnings:
 
 ![index](/documentation/testing/validation/html/index.png)
 
+Error can be safely ignored.
+
 Other pages validated by URL as remaining HTML content is written in React files:
 
 ![URL validation](/documentation/testing/validation/html/url-validation.png)
@@ -782,7 +784,7 @@ Comment.module.css
 ![Comment.module.css](/documentation/testing/validation/css/Comment.png)
 
 CommentCreateEditForm.module.css
-![CommentCreateEditForm.module.css](/documentation/testing/validation/css/CommentCreateEditForm.png)
+![CommentCreateEditForm.module.css](/documentation/testing/validation/css/CommentEditCreateForm.png)
 
 Footer.module.css
 ![Footer.module.css](/documentation/testing/validation/css/Footer.png)
@@ -800,7 +802,7 @@ Post.module.css
 ![Post.module.css](/documentation/testing/validation/css/Post.png)
 
 PostCreateEditForm.module.css
-![PostCreateEditForm.module.css](/documentation/testing/validation/css/PostCreateEditForm.png)
+![PostCreateEditForm.module.css](/documentation/testing/validation/css/PostEditCreateForm.png)
 
 PostsPage.module.css
 ![PostsPage.module.css](/documentation/testing/validation/css/PostsPage.png)
@@ -828,16 +830,17 @@ npm init @eslint/config
 
 No warnings were returned. Errors were found in some files as per the screenshots below. All other files returned with no errors.
 The following rules were ignored:
+
 ![ignored](/documentation/testing/validation/js/ignored.png)
 
 <details>
 
 <summary>Screenshots</summary>
 
-App.js
+##### App.js
 ![App.js validation](/documentation/testing/validation/js/app.png)
 
-index.js
+##### index.js
 ![index.js validation](/documentation/testing/validation/js/index.png)
 
 ##### components
@@ -915,7 +918,7 @@ index.js
 | Edge | Y | Y |
 | Safari* | Y | Y |
 
-*Tested on mobile only
+*Tested on mobile
 
 ### Responsiveness
 
