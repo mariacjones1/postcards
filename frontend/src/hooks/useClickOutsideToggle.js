@@ -8,7 +8,6 @@ const useClickOutsideToggle = () => {
             const ignore = event.target.id;
             if (ignore !== 'dropdown') {
                 if (ref.current && !ref.current.contains(event.target)) {
-                    console.log(ref.current);
                     setExpanded(false);
                 }
             }
